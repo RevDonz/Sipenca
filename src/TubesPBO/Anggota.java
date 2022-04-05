@@ -7,27 +7,15 @@ package TubesPBO;
 
 /**
  *
- * @author ASUS
+ * @author HP
  */
-public class Alamat extends Base {
-    private int id_alamat;
-    private String provinsi;
-    private String kab_kot;
-    private String kecamatan;
-    private String kelurahan;
-    private int rt;
-    private int rw;
-    private int nomorRumah;
+public class Anggota extends Base {
+    private int id_anggota;
+    private int kepala;
     
-    public Alamat(int id_alamat, String provinsi, String kab_kot, String kecamatan, String kelurahan, int rt, int rw, int nomorRumah) {
-        this.id_alamat = id_alamat;
-        this.provinsi = provinsi;
-        this.kab_kot = kab_kot;
-        this.kecamatan = kecamatan;
-        this.kelurahan = kelurahan;
-        this.rt = rt;
-        this.rw = rw;
-        this.nomorRumah = nomorRumah;
+    public Anggota(int id_anggota, int kepala){
+        this.id_anggota = id_anggota;
+        this.kepala = kepala;
     }
 
     @Override
@@ -44,5 +32,4 @@ public class Alamat extends Base {
     void deleteData() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
 }

@@ -7,27 +7,15 @@ package TubesPBO;
 
 /**
  *
- * @author ASUS
+ * @author HP
  */
-public class Alamat extends Base {
-    private int id_alamat;
-    private String provinsi;
-    private String kab_kot;
-    private String kecamatan;
-    private String kelurahan;
-    private int rt;
-    private int rw;
-    private int nomorRumah;
+public class Keluarga extends Base {
+    private int id_keluarga;
+    private int kepala_keluarga;
     
-    public Alamat(int id_alamat, String provinsi, String kab_kot, String kecamatan, String kelurahan, int rt, int rw, int nomorRumah) {
-        this.id_alamat = id_alamat;
-        this.provinsi = provinsi;
-        this.kab_kot = kab_kot;
-        this.kecamatan = kecamatan;
-        this.kelurahan = kelurahan;
-        this.rt = rt;
-        this.rw = rw;
-        this.nomorRumah = nomorRumah;
+    public Keluarga(int id_keluarga, int kepala_keluarga){
+        this.id_keluarga = id_keluarga;
+        this.kepala_keluarga = kepala_keluarga;
     }
 
     @Override

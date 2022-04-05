@@ -16,7 +16,16 @@ public class User extends Base{
     private String username;
     private String email;
     private String password;
-
+    
+    public User(int id_user, int profil_user, int role, String username, String email, String password) {
+        this.id_user = id_user;
+        this.profil_user = profil_user;
+        this.role = role;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+    
     @Override
     void addData() {
 
@@ -31,6 +40,5 @@ public class User extends Base{
     void deleteData() {
 
     }
-    
     
 }

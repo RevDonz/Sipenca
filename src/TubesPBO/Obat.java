@@ -16,5 +16,28 @@ public class Obat extends Base {
     private String satuan;
     private int jumlah;
     
+    public Obat(int id_obat, int penyakit, String nama_obat, String satuan, int jumlah) {
+        this.id_obat = id_obat;
+        this.penyakit = penyakit;
+        this.nama_obat = nama_obat;
+        this.satuan = satuan;
+        this.jumlah = jumlah;
+    }
+
+    @Override
+    void addData() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    void updateData() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    void deleteData() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
     
 }

@@ -5,6 +5,8 @@
  */
 package TubesPBO;
 
+import java.util.Date;
+
 /**
  *
  * @author ASUS
@@ -12,11 +14,30 @@ package TubesPBO;
 public class Role extends Base {
     private int id_role;
     private String nama_role;
-    
-    public Role(int id_role, String nama_role) {
+
+    public Role(int id_role, String nama_role, Date created_at, Date updated_at, Date deleted_at) {
+        super(created_at, updated_at, deleted_at);
         this.id_role = id_role;
         this.nama_role = nama_role;
     }
+
+    public int getId_role() {
+        return id_role;
+    }
+
+    public void setId_role(int id_role) {
+        this.id_role = id_role;
+    }
+
+    public String getNama_role() {
+        return nama_role;
+    }
+
+    public void setNama_role(String nama_role) {
+        this.nama_role = nama_role;
+    }
+    
+    
 
     @Override
     void addData() {

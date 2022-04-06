@@ -5,6 +5,8 @@
  */
 package TubesPBO;
 
+import java.util.Date;
+
 /**
  *
  * @author ASUS
@@ -14,12 +16,39 @@ public class Penyakit extends Base {
     private int id_penyakit;
     private String nama_penyakit;
     private int penyandang;
-    
-    public Penyakit(int id_penyakit, String nama_penyakit, int penyandang) {
+
+    public Penyakit(int id_penyakit, String nama_penyakit, int penyandang, Date created_at, Date updated_at, Date deleted_at) {
+        super(created_at, updated_at, deleted_at);
         this.id_penyakit = id_penyakit;
         this.nama_penyakit = nama_penyakit;
         this.penyandang = penyandang;
     }
+
+    public int getId_penyakit() {
+        return id_penyakit;
+    }
+
+    public void setId_penyakit(int id_penyakit) {
+        this.id_penyakit = id_penyakit;
+    }
+
+    public String getNama_penyakit() {
+        return nama_penyakit;
+    }
+
+    public void setNama_penyakit(String nama_penyakit) {
+        this.nama_penyakit = nama_penyakit;
+    }
+
+    public int getPenyandang() {
+        return penyandang;
+    }
+
+    public void setPenyandang(int penyandang) {
+        this.penyandang = penyandang;
+    }
+    
+    
 
     @Override
     void addData() {

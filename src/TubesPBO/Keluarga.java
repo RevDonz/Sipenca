@@ -5,6 +5,8 @@
  */
 package TubesPBO;
 
+import java.util.Date;
+
 /**
  *
  * @author HP
@@ -12,11 +14,30 @@ package TubesPBO;
 public class Keluarga extends Base {
     private int id_keluarga;
     private int kepala_keluarga;
-    
-    public Keluarga(int id_keluarga, int kepala_keluarga){
+
+    public Keluarga(int id_keluarga, int kepala_keluarga, Date created_at, Date updated_at, Date deleted_at) {
+        super(created_at, updated_at, deleted_at);
         this.id_keluarga = id_keluarga;
         this.kepala_keluarga = kepala_keluarga;
     }
+
+    public int getId_keluarga() {
+        return id_keluarga;
+    }
+
+    public void setId_keluarga(int id_keluarga) {
+        this.id_keluarga = id_keluarga;
+    }
+
+    public int getKepala_keluarga() {
+        return kepala_keluarga;
+    }
+
+    public void setKepala_keluarga(int kepala_keluarga) {
+        this.kepala_keluarga = kepala_keluarga;
+    }
+    
+    
 
     @Override
     void addData() {

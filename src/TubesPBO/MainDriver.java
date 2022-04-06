@@ -5,6 +5,8 @@
  */
 package TubesPBO;
 
+import java.util.Date;
+
 /**
  *
  * @author ASUS
@@ -15,7 +17,10 @@ public class MainDriver {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Hello World");
+        Role admin = new Role(1, "Admin", new Date(), new Date(), new Date());
+        System.out.println(admin.getId_role());
+        System.out.println(admin.getNama_role());
+        
     }
     
 }

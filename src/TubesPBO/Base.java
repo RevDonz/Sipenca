@@ -12,6 +12,7 @@ import java.util.Date;
  * @author ASUS
  */
 abstract class Base {
+
     private Date created_at;
     private Date updated_at;
     private Date deleted_at;
@@ -21,6 +22,19 @@ abstract class Base {
         this.updated_at = updated_at;
         this.deleted_at = deleted_at;
     }
+    
+    public Date getCreated_at() {
+        return created_at;
+    }
+
+    public Date getUpdated_at() {
+        return updated_at;
+    }
+
+    public Date getDeleted_at() {
+        return deleted_at;
+    }
+    
     
     abstract void addData();
     abstract void updateData();

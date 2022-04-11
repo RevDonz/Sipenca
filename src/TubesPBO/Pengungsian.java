@@ -13,11 +13,11 @@ import java.util.Date;
  */
 public class Pengungsian extends Base{
     private int id_pengungsian;
-    private String alamat;
+    private int alamat;
     private String nama_tempat;
     private int kapasitas_tempat;
 
-    public Pengungsian(int id_pengungsian, String alamat, String nama_tempat, int kapasitas_tempat, Date created_at, Date updated_at, Date deleted_at) {
+    public Pengungsian(int id_pengungsian, int alamat, String nama_tempat, int kapasitas_tempat, Date created_at, Date updated_at, Date deleted_at) {
         super(created_at, updated_at, deleted_at);
         this.id_pengungsian = id_pengungsian;
         this.alamat = alamat;
@@ -33,11 +33,11 @@ public class Pengungsian extends Base{
         this.id_pengungsian = id_pengungsian;
     }
 
-    public String getAlamat() {
+    public int getAlamat() {
         return alamat;
     }
 
-    public void setAlamat(String alamat) {
+    public void setAlamat(int alamat) {
         this.alamat = alamat;
     }
 

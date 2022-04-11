@@ -13,12 +13,12 @@ import java.util.Date;
  */
 public class Profile extends Base {
     private int id_profil;
-    private String alamat_user;
+    private int alamat_user;
     private String nama_lengkap;
     private String kota_lahir;
     private Date tanggal_lahir;
 
-    public Profile(int id_profil, String alamat_user, String nama_lengkap, String kota_lahir, Date tanggal_lahir, Date created_at, Date updated_at, Date deleted_at) {
+    public Profile(int id_profil, int alamat_user, String nama_lengkap, String kota_lahir, Date tanggal_lahir, Date created_at, Date updated_at, Date deleted_at) {
         super(created_at, updated_at, deleted_at);
         this.id_profil = id_profil;
         this.alamat_user = alamat_user;
@@ -35,11 +35,11 @@ public class Profile extends Base {
         this.id_profil = id_profil;
     }
 
-    public String getAlamat_user() {
+    public int getAlamat_user() {
         return alamat_user;
     }
 
-    public void setAlamat_user(String alamat_user) {
+    public void setAlamat_user(int alamat_user) {
         this.alamat_user = alamat_user;
     }
 

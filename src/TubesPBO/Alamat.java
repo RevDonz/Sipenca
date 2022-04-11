@@ -100,31 +100,31 @@ public class Alamat extends Base {
 
     @Override
     void addData() {
+        java.util.Date date = new java.util.Date();
+        this.setCreated_at(date);
         /*
             kode untuk nyimpen data ke database isi di sini
         */
-        java.util.Date date = new java.util.Date();
-        this.setCreated_at(date);
         System.out.println("Data berhasil tersimpan");
     }
 
     @Override
     void updateData() {
+        java.util.Date date = new java.util.Date();
+        this.setUpdated_at(date);
         /*
             kode untuk update data ke database isi di sini
         */
-        java.util.Date date = new java.util.Date();
-        this.setUpdated_at(date);
         System.out.println("Data berhasil diupdate");
     }
 
     @Override
     void deleteData() {
+        java.util.Date date = new java.util.Date();
+        this.setDeleted_at(date);
         /*
             data untuk update atribut deleted_at di db simpen di sini
         */
-        java.util.Date date = new java.util.Date();
-        this.setDeleted_at(date);
         System.out.println("Data berhasil dihapus");
     }
     

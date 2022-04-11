@@ -47,6 +47,9 @@ public class MainDriver {
         Pengelola petugas = new Pengelola(0, 0, 2, false);
         Pengelola pemilik = new Pengelola(1, 0, 3, true);
         
+        System.out.println(alamatAdmin1.getCreated_at());
+        alamatAdmin1.addData();
+        System.out.println(alamatAdmin1.getCreated_at());
     }
     
 }

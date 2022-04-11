@@ -19,8 +19,7 @@ public class User extends Base{
     private String email;
     private String password;
 
-    public User(int id_user, int profil_user, int role, String username, String email, String password, Date created_at, Date updated_at, Date deleted_at) {
-        super(created_at, updated_at, deleted_at);
+    public User(int id_user, int profil_user, int role, String username, String email, String password) {
         this.id_user = id_user;
         this.profil_user = profil_user;
         this.role = role;

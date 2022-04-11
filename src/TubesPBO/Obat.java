@@ -19,8 +19,7 @@ public class Obat extends Base {
     private int jumlah;
 
     
-    public Obat(int id_obat, int penyakit, String nama_obat, String satuan, int jumlah, Date created_at, Date updated_at, Date deleted_at) {
-        super(created_at, updated_at, deleted_at);
+    public Obat(int id_obat, int penyakit, String nama_obat, String satuan, int jumlah) {
         this.id_obat = id_obat;
         this.penyakit = penyakit;
         this.nama_obat = nama_obat;

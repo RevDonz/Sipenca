@@ -17,8 +17,7 @@ public class Pengungsian extends Base{
     private String nama_tempat;
     private int kapasitas_tempat;
 
-    public Pengungsian(int id_pengungsian, int alamat, String nama_tempat, int kapasitas_tempat, Date created_at, Date updated_at, Date deleted_at) {
-        super(created_at, updated_at, deleted_at);
+    public Pengungsian(int id_pengungsian, int alamat, String nama_tempat, int kapasitas_tempat) {
         this.id_pengungsian = id_pengungsian;
         this.alamat = alamat;
         this.nama_tempat = nama_tempat;

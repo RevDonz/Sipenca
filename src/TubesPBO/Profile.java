@@ -5,6 +5,8 @@
  */
 package TubesPBO;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -18,13 +20,15 @@ public class Profile extends Base {
     private String kota_lahir;
     private Date tanggal_lahir;
 
-    public Profile(int id_profil, int alamat_user, String nama_lengkap, String kota_lahir, Date tanggal_lahir, Date created_at, Date updated_at, Date deleted_at) {
-        super(created_at, updated_at, deleted_at);
+    public Profile(int id_profil, int alamat_user, String nama_lengkap, String kota_lahir, String tanggal_lahir) throws ParseException {
         this.id_profil = id_profil;
         this.alamat_user = alamat_user;
         this.nama_lengkap = nama_lengkap;
         this.kota_lahir = kota_lahir;
-        this.tanggal_lahir = tanggal_lahir;
+        
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = formatter.parse(tanggal_lahir);
+        this.tanggal_lahir = date;
     }
 
     public int getId_profil() {
@@ -63,8 +67,10 @@ public class Profile extends Base {
         return tanggal_lahir;
     }
 
-    public void setTanggal_lahir(Date tanggal_lahir) {
-        this.tanggal_lahir = tanggal_lahir;
+    public void setTanggal_lahir(String tanggal_lahir) throws ParseException {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = formatter.parse(tanggal_lahir);
+        this.tanggal_lahir = date;
     }
     
     

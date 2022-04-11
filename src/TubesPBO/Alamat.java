@@ -34,6 +34,10 @@ public class Alamat extends Base {
         this.nomorRumah = nomorRumah;
     }
     
+    public String getAlamatLengkap() {
+        return "RT" + this.rt + " RW" + this.rw + " No." + this.nomorRumah + " Kec." + this.kecamatan + " Kab." + this.kab_kot + " Provinsi " + this.provinsi;
+    }
+    
     public int getId_alamat() {
         return id_alamat;
     }

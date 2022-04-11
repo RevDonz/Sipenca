@@ -33,6 +33,9 @@ public class MainDriver {
         Profile profilAdmin1 = new Profile(0, 0, "Asep", "Bandung", "20/03/1999");
         Profile profilWarga1 = new Profile(1, 1, "Agus", "Bandung", "12/05/2000");
         Profile profilPengelola1 = new Profile(2, 2, "Suhendar", "Bandung", "7/02/1998");
+        Profile profilWarga2 = new Profile(3, 1, "Iman", "Bandung", "15/06/2003");
+        Profile profilWarga3 = new Profile(4, 1, "Ucup", "Bandung", "18/08/2002");
+        Profile profilPengelola2 = new Profile(5, 2, "Mamat", "Bandung", "7/05/1998");
         
         // Alamat
         Alamat alamatAdmin1 = new Alamat(0, "Jawa barat", "Bandung", "Baleendah", "Baleendah", 2, 18, 1);
@@ -47,9 +50,31 @@ public class MainDriver {
         Pengelola petugas = new Pengelola(0, 0, 2, false);
         Pengelola pemilik = new Pengelola(1, 0, 3, true);
         
-        System.out.println(alamatAdmin1.getCreated_at());
-        alamatAdmin1.addData();
-        System.out.println(alamatAdmin1.getCreated_at());
+
+        // Keluarga
+        Keluarga keluarga1 = new Keluarga(0, 1);
+        
+        // Anggota Keluarga
+        Anggota anggota1Warga1 = new Anggota(0, 1, 3);
+        Anggota anggota2Warga1 = new Anggota(1, 1, 4);
+        
+        // Penyakit
+        Penyakit demam = new Penyakit(0, "Demam", 1);
+        
+        // Obat
+        Obat panadol = new Obat(0, 0, "Panadol", "pcs", 4);
+        
+        // Kebutuhan
+        Kebutuhan kebutuhan1 = new Kebutuhan(0, 0, "Beras", "kg", 10, true);
+        
+        System.out.println("Nama Admin 1 : " + profilAdmin1.getNama_lengkap());
+        System.out.println();
+        System.out.println("Nama Warga 1 : " + profilWarga1.getNama_lengkap());
+        System.out.println("Alamat Warga 1 : " + alamatWarga1.getAlamatLengkap());
+        System.out.println();
+        System.out.println("Detail Pengungsian : ");
+        System.out.println("Nama tempat : " + PoskoA.getNama_tempat());
+        System.out.println("Kapasitas : " + PoskoA.getKapasitas_tempat());
     }
     
 }

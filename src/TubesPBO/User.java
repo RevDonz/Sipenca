@@ -27,7 +27,7 @@ public class User extends Base{
         this.email = email;
         this.password = password;
     }
-
+    
     public int getId_user() {
         return id_user;
     }

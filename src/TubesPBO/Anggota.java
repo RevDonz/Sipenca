@@ -14,10 +14,20 @@ import java.util.Date;
 public class Anggota extends Base {
     private int id_anggota;
     private int kepala;
+    private int profil;
 
-    public Anggota(int id_anggota, int kepala) {
+    public Anggota(int id_anggota, int kepala, int profil) {
         this.id_anggota = id_anggota;
         this.kepala = kepala;
+        this.profil = profil;
+    }
+
+    public int getProfil() {
+        return profil;
+    }
+
+    public void setProfil(int profil) {
+        this.profil = profil;
     }
 
     public int getId_anggota() {

@@ -17,7 +17,7 @@ public class MainDriver {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Role admin = new Role(1, "Admin", new Date(), new Date(), new Date());
+        Role admin = new Role(1, "Admin");
         System.out.println(admin.getId_role());
         System.out.println(admin.getNama_role());
         

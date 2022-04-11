@@ -15,8 +15,7 @@ public class Keluarga extends Base {
     private int id_keluarga;
     private int kepala_keluarga;
 
-    public Keluarga(int id_keluarga, int kepala_keluarga, Date created_at, Date updated_at, Date deleted_at) {
-        super(created_at, updated_at, deleted_at);
+    public Keluarga(int id_keluarga, int kepala_keluarga) {
         this.id_keluarga = id_keluarga;
         this.kepala_keluarga = kepala_keluarga;
     }

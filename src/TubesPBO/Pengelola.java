@@ -8,8 +8,7 @@ public class Pengelola extends Base {
     private int pengelola;
     private boolean adalah_pemilik;
 
-    public Pengelola(int id_pengelola, int id_pengungsian, int pengelola, boolean adalah_pemilik, Date created_at, Date updated_at, Date deleted_at) {
-        super(created_at, updated_at, deleted_at);
+    public Pengelola(int id_pengelola, int id_pengungsian, int pengelola, boolean adalah_pemilik) {
         this.id_pengelola = id_pengelola;
         this.id_pengungsian = id_pengungsian;
         this.pengelola = pengelola;

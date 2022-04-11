@@ -10,8 +10,7 @@ public class Kebutuhan extends Base {
     private int jumlah;
     private boolean adalah_pokok;
 
-    public Kebutuhan(int id_kebutuhan, int keluarga, String nama_barang, String satuan, int jumlah, boolean adalah_pokok, Date created_at, Date updated_at, Date deleted_at) {
-        super(created_at, updated_at, deleted_at);
+    public Kebutuhan(int id_kebutuhan, int keluarga, String nama_barang, String satuan, int jumlah, boolean adalah_pokok) {
         this.id_kebutuhan = id_kebutuhan;
         this.keluarga = keluarga;
         this.nama_barang = nama_barang;

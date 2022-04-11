@@ -17,8 +17,7 @@ public class Penyakit extends Base {
     private String nama_penyakit;
     private int penyandang;
 
-    public Penyakit(int id_penyakit, String nama_penyakit, int penyandang, Date created_at, Date updated_at, Date deleted_at) {
-        super(created_at, updated_at, deleted_at);
+    public Penyakit(int id_penyakit, String nama_penyakit, int penyandang) {
         this.id_penyakit = id_penyakit;
         this.nama_penyakit = nama_penyakit;
         this.penyandang = penyandang;

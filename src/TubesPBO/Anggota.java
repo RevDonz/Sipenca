@@ -15,8 +15,7 @@ public class Anggota extends Base {
     private int id_anggota;
     private int kepala;
 
-    public Anggota(int id_anggota, int kepala, Date created_at, Date updated_at, Date deleted_at) {
-        super(created_at, updated_at, deleted_at);
+    public Anggota(int id_anggota, int kepala) {
         this.id_anggota = id_anggota;
         this.kepala = kepala;
     }

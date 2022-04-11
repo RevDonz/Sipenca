@@ -5,6 +5,8 @@
  */
 package TubesPBO;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /**
@@ -21,8 +23,7 @@ public class Alamat extends Base {
     private int rw;
     private int nomorRumah;
 
-    public Alamat(int id_alamat, String provinsi, String kab_kot, String kecamatan, String kelurahan, int rt, int rw, int nomorRumah, Date created_at, Date updated_at, Date deleted_at) {
-        super(created_at, updated_at, deleted_at);
+    public Alamat(int id_alamat, String provinsi, String kab_kot, String kecamatan, String kelurahan, int rt, int rw, int nomorRumah) {
         this.id_alamat = id_alamat;
         this.provinsi = provinsi;
         this.kab_kot = kab_kot;
@@ -101,17 +102,32 @@ public class Alamat extends Base {
 
     @Override
     void addData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        /*
+            kode untuk nyimpen data ke database isi di sini
+        */
+        java.util.Date date = new java.util.Date();
+        this.setCreated_at(date);
+        System.out.println("Data berhasil tersimpan");
     }
 
     @Override
     void updateData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        /*
+            kode untuk update data ke database isi di sini
+        */
+        java.util.Date date = new java.util.Date();
+        this.setUpdated_at(date);
+        System.out.println("Data berhasil diupdate");
     }
 
     @Override
     void deleteData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        /*
+            data untuk update atribut deleted_at di db simpen di sini
+        */
+        java.util.Date date = new java.util.Date();
+        this.setDeleted_at(date);
+        System.out.println("Data berhasil dihapus");
     }
     
 }

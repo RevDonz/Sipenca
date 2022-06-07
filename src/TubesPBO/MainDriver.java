@@ -5,6 +5,8 @@
  */
 package TubesPBO;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.Date;
 
@@ -17,7 +19,7 @@ public class MainDriver {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args) throws ParseException, SQLException {
         // Role
         Role admin = new Role(1, "Admin");
         Role warga = new Role(2, "Warga");
@@ -26,8 +28,8 @@ public class MainDriver {
         // User
         User admin1 = new User(0, 0, 1, "admin1", "admin1@gmail.com", "passwordadmin1");
         User warga1 = new User(1, 1, 2, "warga1", "warga1@gmail.com", "passwordwarga1");
-        User pengelola1 = new User(2, 2, 2, "pengelola1", "pengelola1@gmail.com", "passwordpengelola1");
-        User pengelola2 = new User(3, 5, 2, "pengelola2", "pengelola2@gmail.com", "passwordpengelola2");
+        User pengelola1 = new User(2, 2, 3, "pengelola1", "pengelola1@gmail.com", "passwordpengelola1");
+        User pengelola2 = new User(3, 5, 3, "pengelola2", "pengelola2@gmail.com", "passwordpengelola2");
         
         // Profile
         Profile profilAdmin1 = new Profile(0, 0, "Asep", "Bandung", "20/03/1999");
@@ -75,6 +77,7 @@ public class MainDriver {
         System.out.println("Detail Pengungsian : ");
         System.out.println("Nama tempat : " + PoskoA.getNama_tempat());
         System.out.println("Kapasitas : " + PoskoA.getKapasitas_tempat());
+        
     }
     
 }

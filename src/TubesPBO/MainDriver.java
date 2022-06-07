@@ -26,8 +26,8 @@ public class MainDriver {
         // User
         User admin1 = new User(0, 0, 1, "admin1", "admin1@gmail.com", "passwordadmin1");
         User warga1 = new User(1, 1, 2, "warga1", "warga1@gmail.com", "passwordwarga1");
-        User pengelola1 = new User(2, 1, 2, "pengelola1", "pengelola1@gmail.com", "passwordpengelola1");
-        User pengelola2 = new User(3, 1, 2, "pengelola2", "pengelola2@gmail.com", "passwordpengelola2");
+        User pengelola1 = new User(2, 2, 2, "pengelola1", "pengelola1@gmail.com", "passwordpengelola1");
+        User pengelola2 = new User(3, 5, 2, "pengelola2", "pengelola2@gmail.com", "passwordpengelola2");
         
         // Profile
         Profile profilAdmin1 = new Profile(0, 0, "Asep", "Bandung", "20/03/1999");
@@ -50,7 +50,7 @@ public class MainDriver {
         Pengelola petugas = new Pengelola(0, 0, 2, false);
         Pengelola pemilik = new Pengelola(1, 0, 3, true);
         
-        // Keluarga
+        // Keluarga 
         Keluarga keluarga1 = new Keluarga(0, 1);
         
         // Anggota Keluarga

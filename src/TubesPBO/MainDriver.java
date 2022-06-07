@@ -50,7 +50,12 @@ public class MainDriver {
         Pengelola petugas = new Pengelola(0, 0, 2, false);
         Pengelola pemilik = new Pengelola(1, 0, 3, true);
         
+<<<<<<< HEAD
         // Keluarga 
+=======
+
+        // Keluarga
+>>>>>>> b41a244d61e9851c1a0fa5230741d6b561805f48
         Keluarga keluarga1 = new Keluarga(0, 1);
         
         // Anggota Keluarga

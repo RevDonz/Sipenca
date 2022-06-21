@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
@@ -232,8 +232,14 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="inputIdPengungsian">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputIdPengungsianActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="inputNamaTempat">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputNamaTempatActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="inputAlamat">
             </Component>
@@ -336,12 +342,14 @@
                           </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lblKeluarga" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="lblJumlahKebutuhan" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="inputKeluarga" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="inputJumlahKebutuhan" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnUbahDataKebutuhan" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="inputKeluarga" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="inputJumlahKebutuhan" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnUbahDataKebutuhan" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -737,7 +745,7 @@
                           <Component id="inputPenyandang" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnHapusDataPenyakit" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="20" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="jScrollPane4" min="-2" pref="181" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                   </Group>

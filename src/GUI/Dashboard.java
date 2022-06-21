@@ -137,6 +137,18 @@ public class Dashboard extends javax.swing.JFrame {
 
         lblKapasitas.setText("Kapasitas");
 
+        inputIdPengungsian.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputIdPengungsianActionPerformed(evt);
+            }
+        });
+
+        inputNamaTempat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputNamaTempatActionPerformed(evt);
+            }
+        });
+
         btnTambahDataPengungsian.setText("Tambah");
 
         btnUbahDataPengungsian.setText("Ubah");
@@ -300,12 +312,13 @@ public class Dashboard extends javax.swing.JFrame {
                             .addComponent(inputSatuanKebutuhan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnTambahDataKebutuhan))))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblKeluarga)
                     .addComponent(lblJumlahKebutuhan)
-                    .addComponent(inputKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputJumlahKebutuhan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnUbahDataKebutuhan))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(inputKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(inputJumlahKebutuhan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnUbahDataKebutuhan)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -508,7 +521,7 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(lblPenyandang)
                     .addComponent(inputPenyandang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnHapusDataPenyakit))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68))
         );
@@ -560,17 +573,25 @@ public class Dashboard extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< HEAD
+
     private void inputPenyandangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPenyandangActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputPenyandangActionPerformed
-=======
+
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
         this.dispose();
         new View_Profile().setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
->>>>>>> b27a8704dc286c22c659b36fe4f3b90763fa3066
+
+    private void inputIdPengungsianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputIdPengungsianActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputIdPengungsianActionPerformed
+
+    private void inputNamaTempatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNamaTempatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputNamaTempatActionPerformed
+
 
     /**
      * @param args the command line arguments

@@ -48,33 +48,28 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTabbedPane1" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
+          <Component id="jTabbedPane_DataPengungsian" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTabbedPane1" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="0" pref="24" max="32767" attributes="0"/>
+              <Component id="jTabbedPane_DataPengungsian" min="-2" pref="470" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+    <Container class="javax.swing.JTabbedPane" name="jTabbedPane_DataPengungsian">
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
         <Container class="javax.swing.JPanel" name="jPanel1">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="tab1">
-                <Property name="tabTitle" type="java.lang.String" value="tab1"/>
+              <JTabbedPaneConstraints tabName="Data Pengungsian">
+                <Property name="tabTitle" type="java.lang.String" value="Data Pengungsian"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -82,17 +77,770 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="717" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace pref="87" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblAlamat" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblNamaTempat" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblKapasitas" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="inputNamaTempat" alignment="1" min="-2" pref="171" max="-2" attributes="0"/>
+                                          <Component id="inputAlamat" alignment="1" min="-2" pref="171" max="-2" attributes="0"/>
+                                          <Component id="inputKapasitas" alignment="1" min="-2" pref="171" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="lblIdPengungsian" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                      <Component id="inputIdPengungsian" min="-2" pref="171" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="btnTambahDataPengungsian" max="32767" attributes="0"/>
+                                  <Component id="btnUbahDataPengungsian" max="32767" attributes="0"/>
+                                  <Component id="btnHapusDataPengungsian" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jScrollPane1" min="-2" pref="646" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="372" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="inputIdPengungsian" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblIdPengungsian" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblNamaTempat" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputNamaTempat" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnTambahDataPengungsian" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="inputAlamat" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblAlamat" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnUbahDataPengungsian" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblKapasitas" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputKapasitas" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnHapusDataPengungsian" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="45" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="180" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
           </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="tableDaftarPengungsian">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="4" rowCount="5">
+                        <Column editable="true" title="Id_Pengungsian" type="java.lang.Integer"/>
+                        <Column editable="true" title="Nama Tempat" type="java.lang.String"/>
+                        <Column editable="true" title="Alamat" type="java.lang.Integer"/>
+                        <Column editable="true" title="Kapasitas" type="java.lang.Integer"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title value="Id_Pengungsian"/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title value="Nama Tempat"/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title value="Alamat"/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title value="Kapasitas"/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Default Cursor"/>
+                    </Property>
+                    <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="cc" green="0" red="0" type="rgb"/>
+                    </Property>
+                    <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="99" red="99" type="rgb"/>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="lblIdPengungsian">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Id_Pengungsian"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblNamaTempat">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nama Tempat"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblAlamat">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Alamat"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblKapasitas">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Kapasitas"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="inputIdPengungsian">
+            </Component>
+            <Component class="javax.swing.JTextField" name="inputNamaTempat">
+            </Component>
+            <Component class="javax.swing.JTextField" name="inputAlamat">
+            </Component>
+            <Component class="javax.swing.JTextField" name="inputKapasitas">
+            </Component>
+            <Component class="javax.swing.JButton" name="btnTambahDataPengungsian">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Tambah"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnUbahDataPengungsian">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ubah"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnHapusDataPengungsian">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Hapus"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel2">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Data Kebutuhan">
+                <Property name="tabTitle" type="java.lang.String" value="Data Kebutuhan"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="34" max="32767" attributes="0"/>
+                      <Component id="jScrollPane2" min="-2" pref="725" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblKeluarga" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblIdKebutuhan" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNamaBarang" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="inputIdKebutuhan" pref="116" max="32767" attributes="0"/>
+                          <Component id="inputNamaBarang" max="32767" attributes="0"/>
+                          <Component id="inputKeluarga" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblJumlahKebutuhan" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblSatuanKebutuhan" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="inputSatuanKebutuhan" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
+                                  <Component id="inputJumlahKebutuhan" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="lblKebutuhanPokok" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="checkboxKebutuhaNPokok" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnTambahDataKebutuhan" max="32767" attributes="0"/>
+                          <Component id="btnUbahDataKebutuhan" max="32767" attributes="0"/>
+                          <Component id="btnHapusDataKebutuhan" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblIdKebutuhan" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="inputIdKebutuhan" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblSatuanKebutuhan" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="inputSatuanKebutuhan" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnTambahDataKebutuhan" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblKeluarga" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblJumlahKebutuhan" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputKeluarga" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputJumlahKebutuhan" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnUbahDataKebutuhan" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblNamaBarang" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblKebutuhanPokok" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="inputNamaBarang" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="checkboxKebutuhaNPokok" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="btnHapusDataKebutuhan" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="50" max="32767" attributes="0"/>
+                      <Component id="jScrollPane2" min="-2" pref="203" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="tableDaftarKebutuhan">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="6" rowCount="4">
+                        <Column editable="true" title="Id_Kebutuhan" type="java.lang.Integer"/>
+                        <Column editable="true" title="Keluarga" type="java.lang.Integer"/>
+                        <Column editable="true" title="Nama Barang" type="java.lang.String"/>
+                        <Column editable="true" title="Satuan" type="java.lang.String"/>
+                        <Column editable="true" title="Jumlah" type="java.lang.Integer"/>
+                        <Column editable="true" title="Kebutuhan Pokok / Bukan" type="java.lang.Boolean"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="lblIdKebutuhan">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Id_Kebutuhan"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblKeluarga">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Keluarga"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblNamaBarang">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nama Barang"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblSatuanKebutuhan">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Satuan"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblJumlahKebutuhan">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Jumlah"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblKebutuhanPokok">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Kebutuhan Pokok"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="inputIdKebutuhan">
+            </Component>
+            <Component class="javax.swing.JTextField" name="inputKeluarga">
+            </Component>
+            <Component class="javax.swing.JTextField" name="inputNamaBarang">
+            </Component>
+            <Component class="javax.swing.JTextField" name="inputSatuanKebutuhan">
+            </Component>
+            <Component class="javax.swing.JTextField" name="inputJumlahKebutuhan">
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="checkboxKebutuhaNPokok">
+            </Component>
+            <Component class="javax.swing.JButton" name="btnTambahDataKebutuhan">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Tambah"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnUbahDataKebutuhan">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ubah"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnHapusDataKebutuhan">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Hapus"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel3">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Data Obat">
+                <Property name="tabTitle" type="java.lang.String" value="Data Obat"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblIdObat" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblPenyakit" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNamaObat" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="inputPenyakit" min="-2" pref="120" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="lblJumlahObat" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="inputIdObat" min="-2" pref="120" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                      <Component id="lblSatuanObat" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="inputSatuanObat" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
+                                  <Component id="inputJumlahObat" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="inputNamaObat" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnHapusDataObat" max="32767" attributes="0"/>
+                          <Component id="btnUbahDataObat" max="32767" attributes="0"/>
+                          <Component id="btnTambahDataObat" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="77" max="32767" attributes="0"/>
+                      <Component id="jScrollPane3" min="-2" pref="647" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="inputIdObat" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblSatuanObat" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputSatuanObat" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblIdObat" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnTambahDataObat" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblPenyakit" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputPenyakit" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputJumlahObat" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblJumlahObat" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnUbahDataObat" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblNamaObat" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputNamaObat" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnHapusDataObat" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="jScrollPane3" min="-2" pref="164" max="-2" attributes="0"/>
+                      <EmptySpace pref="79" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="tableDataObat">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="5" rowCount="4">
+                        <Column editable="true" title="Id_Obat" type="java.lang.Integer"/>
+                        <Column editable="true" title="Penyakit" type="java.lang.Integer"/>
+                        <Column editable="true" title="Nama Obat" type="java.lang.String"/>
+                        <Column editable="true" title="Satuan" type="java.lang.String"/>
+                        <Column editable="true" title="Jumlah" type="java.lang.Integer"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="lblIdObat">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Id_Obat"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblPenyakit">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Penyakit"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblNamaObat">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nama Obat"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblSatuanObat">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Satuan"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblJumlahObat">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Jumlah"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="inputIdObat">
+            </Component>
+            <Component class="javax.swing.JTextField" name="inputPenyakit">
+            </Component>
+            <Component class="javax.swing.JTextField" name="inputNamaObat">
+            </Component>
+            <Component class="javax.swing.JTextField" name="inputSatuanObat">
+            </Component>
+            <Component class="javax.swing.JTextField" name="inputJumlahObat">
+            </Component>
+            <Component class="javax.swing.JButton" name="btnTambahDataObat">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Tambah"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnUbahDataObat">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ubah"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnHapusDataObat">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Hapus"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel5">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Data Penyakit">
+                <Property name="tabTitle" type="java.lang.String" value="Data Penyakit"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="151" max="32767" attributes="0"/>
+                      <Component id="jScrollPane4" min="-2" pref="496" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="239" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblIdPenyakit" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNamaPenyakit" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblPenyandang" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="inputNamaPenyakit" alignment="0" max="32767" attributes="0"/>
+                          <Component id="inputIdPenyakit" alignment="0" pref="100" max="32767" attributes="0"/>
+                          <Component id="inputPenyandang" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="btnTambahDataPenyakit" max="32767" attributes="0"/>
+                          <Component id="btnUbahDataPenyakit" alignment="1" max="32767" attributes="0"/>
+                          <Component id="btnHapusDataPenyakit" alignment="1" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblIdPenyakit" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputIdPenyakit" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnTambahDataPenyakit" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnUbahDataPenyakit" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputNamaPenyakit" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNamaPenyakit" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblPenyandang" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputPenyandang" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnHapusDataPenyakit" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="20" max="32767" attributes="0"/>
+                      <Component id="jScrollPane4" min="-2" pref="181" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="tableDataPenyakit">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="3" rowCount="4">
+                        <Column editable="true" title="Id_Penyakit" type="java.lang.Integer"/>
+                        <Column editable="true" title="Nama Penyakit" type="java.lang.String"/>
+                        <Column editable="true" title="Penyandang" type="java.lang.Integer"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="lblIdPenyakit">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Id_Penyakit"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblNamaPenyakit">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nama Penyakit"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblPenyandang">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Penyandang"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="inputIdPenyakit">
+            </Component>
+            <Component class="javax.swing.JTextField" name="inputNamaPenyakit">
+            </Component>
+            <Component class="javax.swing.JTextField" name="inputPenyandang">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputPenyandangActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnTambahDataPenyakit">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Tambah"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnUbahDataPenyakit">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ubah"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnHapusDataPenyakit">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Hapus"/>
+              </Properties>
+            </Component>
+          </SubComponents>
         </Container>
       </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel4">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
     </Container>
   </SubComponents>
 </Form>

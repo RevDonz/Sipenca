@@ -40,11 +40,11 @@ public class Profile extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        inputNamaAnggotaKeluarga = new javax.swing.JTextField();
+        inputAlamatAnggotKeluarga = new javax.swing.JTextField();
+        inputTglLahirAnggotaKeluarga = new javax.swing.JTextField();
+        inputKotaLahirAnggotaKeluarga = new javax.swing.JTextField();
+        btnTambahAnggotaKeluarga = new javax.swing.JButton();
         panelAnggotaKeluarga = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -53,7 +53,6 @@ public class Profile extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(746, 454));
 
         tabbedPaneProfile.setName(""); // NOI18N
 
@@ -118,18 +117,18 @@ public class Profile extends javax.swing.JFrame {
 
         jLabel13.setText("Kota Lahir:");
 
-        jTextField1.setText("jTextField1");
+        inputNamaAnggotaKeluarga.setText("jTextField1");
 
-        jTextField2.setText("jTextField2");
+        inputAlamatAnggotKeluarga.setText("jTextField2");
 
-        jTextField3.setText("jTextField3");
+        inputTglLahirAnggotaKeluarga.setText("jTextField3");
 
-        jTextField4.setText("jTextField4");
+        inputKotaLahirAnggotaKeluarga.setText("jTextField4");
 
-        jButton1.setText("Tambah");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnTambahAnggotaKeluarga.setText("Tambah");
+        btnTambahAnggotaKeluarga.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnTambahAnggotaKeluargaActionPerformed(evt);
             }
         });
 
@@ -146,14 +145,14 @@ public class Profile extends javax.swing.JFrame {
                     .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelTambahAnggotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
-                    .addComponent(jTextField2)
-                    .addComponent(jTextField3)
-                    .addComponent(jTextField4))
+                    .addComponent(inputNamaAnggotaKeluarga, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
+                    .addComponent(inputAlamatAnggotKeluarga)
+                    .addComponent(inputTglLahirAnggotaKeluarga)
+                    .addComponent(inputKotaLahirAnggotaKeluarga))
                 .addGap(87, 87, 87))
             .addGroup(panelTambahAnggotaLayout.createSequentialGroup()
                 .addGap(308, 308, 308)
-                .addComponent(jButton1)
+                .addComponent(btnTambahAnggotaKeluarga)
                 .addContainerGap(330, Short.MAX_VALUE))
         );
         panelTambahAnggotaLayout.setVerticalGroup(
@@ -162,21 +161,21 @@ public class Profile extends javax.swing.JFrame {
                 .addGap(73, 73, 73)
                 .addGroup(panelTambahAnggotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputNamaAnggotaKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelTambahAnggotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputAlamatAnggotKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelTambahAnggotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputTglLahirAnggotaKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelTambahAnggotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputKotaLahirAnggotaKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(75, 75, 75)
-                .addComponent(jButton1)
+                .addComponent(btnTambahAnggotaKeluarga)
                 .addContainerGap(90, Short.MAX_VALUE))
         );
 
@@ -243,9 +242,9 @@ public class Profile extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnTambahAnggotaKeluargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahAnggotaKeluargaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnTambahAnggotaKeluargaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -283,7 +282,11 @@ public class Profile extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnTambahAnggotaKeluarga;
+    private javax.swing.JTextField inputAlamatAnggotKeluarga;
+    private javax.swing.JTextField inputKotaLahirAnggotaKeluarga;
+    private javax.swing.JTextField inputNamaAnggotaKeluarga;
+    private javax.swing.JTextField inputTglLahirAnggotaKeluarga;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -299,10 +302,6 @@ public class Profile extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JPanel panelAnggotaKeluarga;
     private javax.swing.JPanel panelProfile;
     private javax.swing.JPanel panelTambahAnggota;

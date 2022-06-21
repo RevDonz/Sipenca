@@ -5,10 +5,16 @@
  */
 package TubesPBO;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Vector;
 
 /**
  *
@@ -20,6 +26,51 @@ public class MainDriver {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws ParseException, SQLException {
+        
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultset = null;
+        
+        List<String> usernames = new ArrayList<>();
+        List<String> passwords = new ArrayList<>();
+        List<Integer> roles = new ArrayList<>();
+        
+        
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_sipenca", "root", "");
+            statement = connection.createStatement();
+            resultset = statement.executeQuery("SELECT * FROM tb_user");
+            while (resultset.next()){
+                usernames.add(resultset.getString("username"));
+                passwords.add(resultset.getString("password"));
+                roles.add(resultset.getInt("role"));
+            }
+        } catch (SQLException ex) {
+            System.out.println("SQL Error");
+            ex.printStackTrace();
+        } finally {
+            try {
+                if (connection != null) {
+                connection.close();
+                }
+            } catch (SQLException ex) {
+                System.out.println("SQL Error");
+                ex.printStackTrace();
+            }
+        }
+        String username = "warga1";
+        String password = "passwordwarga1";
+        int uindex = usernames.indexOf(username);
+        for (int i = 0; i < passwords.size(); i++) {
+            System.out.println(passwords.get(i));
+        }
+        if (passwords.get(uindex).equals(password)) {
+            System.out.println("ADAAA");
+            if (roles.get(uindex) == 2) {
+                System.out.println("ADA");
+            }
+        }
+        
         // Role
         Role admin = new Role(1, "Admin");
         Role warga = new Role(2, "Warga");

@@ -92,6 +92,7 @@ public class Login extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -102,7 +103,7 @@ public class Login extends javax.swing.JFrame {
         List<String> usernames = new ArrayList<>();
         List<String> passwords = new ArrayList<>();
         List<Integer> roles = new ArrayList<>();
-        
+        List<Integer> id_users = new ArrayList<>();
         
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_sipenca", "root", "");
@@ -112,6 +113,7 @@ public class Login extends javax.swing.JFrame {
                 usernames.add(resultset.getString("username"));
                 passwords.add(resultset.getString("password"));
                 roles.add(resultset.getInt("role"));
+                id_users.add(resultset.getInt("id_user"));
             }
         } catch (SQLException ex) {
             System.out.println("SQL Error");
@@ -128,23 +130,25 @@ public class Login extends javax.swing.JFrame {
         }
         String username = UsernameField.getText();
         String password = PasswordField.getText();
-        System.out.println(username);
-        System.out.println(password);
+        
         int uindex = usernames.indexOf(username);
-        for (int i = 0; i < passwords.size(); i++) {
-            System.out.println(passwords.get(i));
-        }
+        
+        
         if (passwords.get(uindex).equals(password)) {
-            System.out.println("ADAAA");
+            Dashboard dashboard = new Dashboard(id_users.get(uindex));
+            
             if (roles.get(uindex) == 1) {
                 /*
                     Frame admin login buka di sini
                 */
+                
             }
             else if (roles.get(uindex) == 2) {
                 /*
                     Frame warga login buka di sini
                 */
+                dashboard.setVisible(true);
+                this.dispose();
             } else {
                 /*
                     Frame pengelola login buka di sini

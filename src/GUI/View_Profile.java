@@ -105,6 +105,7 @@ public class View_Profile extends javax.swing.JFrame {
         labelAlamat6 = new javax.swing.JLabel();
         inputNoRumah = new javax.swing.JTextField();
         btnUpdate = new javax.swing.JButton();
+        btnUpdate1 = new javax.swing.JButton();
         panelTambahAnggota = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -150,6 +151,13 @@ public class View_Profile extends javax.swing.JFrame {
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateActionPerformed(evt);
+            }
+        });
+
+        btnUpdate1.setText("Kembali");
+        btnUpdate1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdate1ActionPerformed(evt);
             }
         });
 
@@ -203,6 +211,8 @@ public class View_Profile extends javax.swing.JFrame {
                     .addGroup(panelProfileLayout.createSequentialGroup()
                         .addComponent(inputNoRumah, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnUpdate1)
+                        .addGap(18, 18, 18)
                         .addComponent(btnUpdate)))
                 .addContainerGap(67, Short.MAX_VALUE))
         );
@@ -244,7 +254,9 @@ public class View_Profile extends javax.swing.JFrame {
                     .addGroup(panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(labelAlamat6)
                         .addComponent(inputNoRumah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnUpdate))
+                    .addGroup(panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnUpdate)
+                        .addComponent(btnUpdate1)))
                 .addContainerGap(68, Short.MAX_VALUE))
         );
 
@@ -381,6 +393,7 @@ public class View_Profile extends javax.swing.JFrame {
         tabbedPaneProfile.getAccessibleContext().setAccessibleName("Show");
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -390,6 +403,10 @@ public class View_Profile extends javax.swing.JFrame {
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnUpdate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdate1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnUpdate1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -429,6 +446,7 @@ public class View_Profile extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnUpdate;
+    private javax.swing.JButton btnUpdate1;
     private javax.swing.JTextField inputKabKot;
     private javax.swing.JTextField inputKecamatan;
     private javax.swing.JTextField inputKelurahan;

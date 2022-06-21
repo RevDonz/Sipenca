@@ -5,6 +5,14 @@
  */
 package GUI;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Sabre
@@ -28,9 +36,9 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        UsernameField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        PasswordField = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -44,6 +52,11 @@ public class Login extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("Login");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -57,9 +70,14 @@ public class Login extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+<<<<<<< HEAD
                         .addComponent(jTextField1)
                         .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE))
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+=======
+                        .addComponent(UsernameField)
+                        .addComponent(PasswordField, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)))
+>>>>>>> b27a8704dc286c22c659b36fe4f3b90763fa3066
                 .addGap(43, 43, 43))
         );
         layout.setVerticalGroup(
@@ -67,19 +85,89 @@ public class Login extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(72, 72, 72)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(UsernameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
+<<<<<<< HEAD
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(53, 53, 53)
                 .addComponent(jButton1)
                 .addContainerGap(86, Short.MAX_VALUE))
+=======
+                    .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(46, 46, 46)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(61, Short.MAX_VALUE))
+>>>>>>> b27a8704dc286c22c659b36fe4f3b90763fa3066
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultset = null;
+        
+        List<String> usernames = new ArrayList<>();
+        List<String> passwords = new ArrayList<>();
+        List<Integer> roles = new ArrayList<>();
+        List<Integer> id_users = new ArrayList<>();
+        
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_sipenca", "root", "");
+            statement = connection.createStatement();
+            resultset = statement.executeQuery("SELECT * FROM tb_user");
+            while (resultset.next()){
+                usernames.add(resultset.getString("username"));
+                passwords.add(resultset.getString("password"));
+                roles.add(resultset.getInt("role"));
+                id_users.add(resultset.getInt("id_user"));
+            }
+        } catch (SQLException ex) {
+            System.out.println("SQL Error");
+            ex.printStackTrace();
+        } finally {
+            try {
+                if (connection != null) {
+                connection.close();
+                }
+            } catch (SQLException ex) {
+                System.out.println("SQL Error");
+                ex.printStackTrace();
+            }
+        }
+        String username = UsernameField.getText();
+        String password = PasswordField.getText();
+        
+        int uindex = usernames.indexOf(username);
+        
+        
+        if (passwords.get(uindex).equals(password)) {
+            Dashboard dashboard = new Dashboard(id_users.get(uindex));
+            
+            if (roles.get(uindex) == 1) {
+                /*
+                    Frame admin login buka di sini
+                */
+                
+            }
+            else if (roles.get(uindex) == 2) {
+                /*
+                    Frame warga login buka di sini
+                */
+                dashboard.setVisible(true);
+                this.dispose();
+            } else {
+                /*
+                    Frame pengelola login buka di sini
+                */
+            }
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -117,10 +205,10 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField PasswordField;
+    private javax.swing.JTextField UsernameField;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

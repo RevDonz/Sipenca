@@ -5,10 +5,16 @@
  */
 package TubesPBO;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Vector;
 
 /**
  *
@@ -20,6 +26,51 @@ public class MainDriver {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws ParseException, SQLException {
+        
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultset = null;
+        
+        List<String> usernames = new ArrayList<>();
+        List<String> passwords = new ArrayList<>();
+        List<Integer> roles = new ArrayList<>();
+        
+        
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_sipenca", "root", "");
+            statement = connection.createStatement();
+            resultset = statement.executeQuery("SELECT * FROM tb_user");
+            while (resultset.next()){
+                usernames.add(resultset.getString("username"));
+                passwords.add(resultset.getString("password"));
+                roles.add(resultset.getInt("role"));
+            }
+        } catch (SQLException ex) {
+            System.out.println("SQL Error");
+            ex.printStackTrace();
+        } finally {
+            try {
+                if (connection != null) {
+                connection.close();
+                }
+            } catch (SQLException ex) {
+                System.out.println("SQL Error");
+                ex.printStackTrace();
+            }
+        }
+        String username = "warga1";
+        String password = "passwordwarga1";
+        int uindex = usernames.indexOf(username);
+        for (int i = 0; i < passwords.size(); i++) {
+            System.out.println(passwords.get(i));
+        }
+        if (passwords.get(uindex).equals(password)) {
+            System.out.println("ADAAA");
+            if (roles.get(uindex) == 2) {
+                System.out.println("ADA");
+            }
+        }
+        
         // Role
         Role admin = new Role(1, "Admin");
         Role warga = new Role(2, "Warga");
@@ -32,12 +83,12 @@ public class MainDriver {
         User pengelola2 = new User(3, 5, 3, "pengelola2", "pengelola2@gmail.com", "passwordpengelola2");
         
         // Profile
-        Profile profilAdmin1 = new Profile(0, 0, "Asep", "Bandung", "20/03/1999");
-        Profile profilWarga1 = new Profile(1, 1, "Agus", "Bandung", "12/05/2000");
-        Profile profilPengelola1 = new Profile(2, 2, "Suhendar", "Bandung", "7/02/1998");
-        Profile profilWarga2 = new Profile(3, 1, "Iman", "Bandung", "15/06/2003");
-        Profile profilWarga3 = new Profile(4, 1, "Ucup", "Bandung", "18/08/2002");
-        Profile profilPengelola2 = new Profile(5, 2, "Mamat", "Bandung", "7/05/1998");
+//        Profile profilAdmin1 = new Profile(0, 0, "Asep", "Bandung", "20/03/1999");
+//        Profile profilWarga1 = new Profile(1, 1, "Agus", "Bandung", "12/05/2000");
+//        Profile profilPengelola1 = new Profile(2, 2, "Suhendar", "Bandung", "7/02/1998");
+//        Profile profilWarga2 = new Profile(3, 1, "Iman", "Bandung", "15/06/2003");
+//        Profile profilWarga3 = new Profile(4, 1, "Ucup", "Bandung", "18/08/2002");
+//        Profile profilPengelola2 = new Profile(5, 2, "Mamat", "Bandung", "7/05/1998");
         
         // Alamat
         Alamat alamatAdmin1 = new Alamat(0, "Jawa barat", "Bandung", "Baleendah", "Baleendah", 2, 18, 1);
@@ -69,9 +120,9 @@ public class MainDriver {
         // Kebutuhan
         Kebutuhan kebutuhan1 = new Kebutuhan(0, 0, "Beras", "kg", 10, true);
         
-        System.out.println("Nama Admin 1 : " + profilAdmin1.getNama_lengkap());
+//        System.out.println("Nama Admin 1 : " + profilAdmin1.getNama_lengkap());
         System.out.println();
-        System.out.println("Nama Warga 1 : " + profilWarga1.getNama_lengkap());
+//        System.out.println("Nama Warga 1 : " + profilWarga1.getNama_lengkap());
         System.out.println("Alamat Warga 1 : " + alamatWarga1.getAlamatLengkap());
         System.out.println();
         System.out.println("Detail Pengungsian : ");

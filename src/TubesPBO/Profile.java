@@ -20,15 +20,15 @@ public class Profile extends Base {
     private String kota_lahir;
     private Date tanggal_lahir;
 
-    public Profile(int id_profil, int alamat_user, String nama_lengkap, String kota_lahir, String tanggal_lahir) throws ParseException {
+    public Profile(int id_profil, int alamat_user, String nama_lengkap, String kota_lahir, Date tanggal_lahir) throws ParseException {
         this.id_profil = id_profil;
         this.alamat_user = alamat_user;
         this.nama_lengkap = nama_lengkap;
         this.kota_lahir = kota_lahir;
         
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        Date date = formatter.parse(tanggal_lahir);
-        this.tanggal_lahir = date;
+//        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+//        Date date = formatter.parse(tanggal_lahir);
+        this.tanggal_lahir = tanggal_lahir;
     }
 
     public int getId_profil() {

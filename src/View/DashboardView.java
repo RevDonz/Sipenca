@@ -9,12 +9,12 @@ package View;
  *
  * @author Sabre
  */
-public class Dashboard extends javax.swing.JFrame {
+public class DashboardView extends javax.swing.JFrame {
     private int id_user;
     /**
      * Creates new form Dashboard
      */
-    public Dashboard(int id) {
+    public DashboardView(int id) {
         this.id_user = id;
         initComponents();
     }
@@ -581,7 +581,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new View_Profile(id_user).setVisible(true);
+        new ProfileView(id_user).setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void inputIdPengungsianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputIdPengungsianActionPerformed
@@ -610,20 +610,20 @@ public class Dashboard extends javax.swing.JFrame {
 //                }
 //            }
 //        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(DashboardView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(DashboardView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(DashboardView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(DashboardView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        }
 //        //</editor-fold>
 //
 //        /* Create and display the form */
 //        java.awt.EventQueue.invokeLater(new Runnable() {
 //            public void run() {
-//                new Dashboard().setVisible(true);
+//                new DashboardView().setVisible(true);
 //            }
 //        });
 //    }

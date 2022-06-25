@@ -15,13 +15,13 @@ import java.util.Date;
  *
  * @author HP
  */
-public class View_Profile extends javax.swing.JFrame {
+public class ProfileView extends javax.swing.JFrame {
     private int id_user;
 
     /**
      * Creates new form Profile
      */
-    public View_Profile(int id) {
+    public ProfileView(int id) {
         this.id_user = id;
         initComponents();
         getProfil();
@@ -50,7 +50,7 @@ public class View_Profile extends javax.swing.JFrame {
             while (alamatUser.next()) {
                 int id_alamat = alamatUser.getInt("id_alamat");
                 String provinsi = alamatUser.getString("provinsi");
-                String kab_kot = alamatUser.getString("kab_kot");
+                String kab_kot = alamatUser.getString("kab_kota");
                 String kecamatan = alamatUser.getString("kecamatan");
                 String kelurahan = alamatUser.getString("kelurahan");
                 int rt = alamatUser.getInt("rt");
@@ -413,13 +413,13 @@ public class View_Profile extends javax.swing.JFrame {
 //                }
 //            }
 //        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(View_Profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(ProfileView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(View_Profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(ProfileView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(View_Profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(ProfileView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(View_Profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(ProfileView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        }
 //        //</editor-fold>
 //        //</editor-fold>
@@ -427,7 +427,7 @@ public class View_Profile extends javax.swing.JFrame {
 //        /* Create and display the form */
 //        java.awt.EventQueue.invokeLater(new Runnable() {
 //            public void run() {
-//                new View_Profile().setVisible(true);
+//                new ProfileView().setVisible(true);
 //            }
 //        });
 //    }

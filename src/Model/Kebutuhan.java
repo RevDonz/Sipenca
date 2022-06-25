@@ -1,4 +1,4 @@
-package TubesPBO;
+package Model;
 
 import java.util.Date;
 

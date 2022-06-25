@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package TubesPBO;
+package Model;
 
 import java.util.Date;
 
@@ -11,31 +11,41 @@ import java.util.Date;
  *
  * @author HP
  */
-public class Keluarga extends Base {
-    private int id_keluarga;
-    private int kepala_keluarga;
+public class Anggota extends Base {
+    private int id_anggota;
+    private int kepala;
+    private int profil;
 
-    public Keluarga(int id_keluarga, int kepala_keluarga) {
-        this.id_keluarga = id_keluarga;
-        this.kepala_keluarga = kepala_keluarga;
+    public Anggota(int id_anggota, int kepala, int profil) {
+        this.id_anggota = id_anggota;
+        this.kepala = kepala;
+        this.profil = profil;
     }
 
-    public int getId_keluarga() {
-        return id_keluarga;
+    public int getProfil() {
+        return profil;
     }
 
-    public void setId_keluarga(int id_keluarga) {
-        this.id_keluarga = id_keluarga;
+    public void setProfil(int profil) {
+        this.profil = profil;
     }
 
-    public int getKepala_keluarga() {
-        return kepala_keluarga;
+    public int getId_anggota() {
+        return id_anggota;
     }
 
-    public void setKepala_keluarga(int kepala_keluarga) {
-        this.kepala_keluarga = kepala_keluarga;
+    public void setId_anggota(int id_anggota) {
+        this.id_anggota = id_anggota;
     }
-    
+
+    public int getKepala() {
+        return kepala;
+    }
+
+    public void setKepala(int kepala) {
+        this.kepala = kepala;
+    }
+
     @Override
     void addData() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -50,5 +60,4 @@ public class Keluarga extends Base {
     void deleteData() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
 }

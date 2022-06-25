@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package View;
 
-import TubesPBO.Database;
+import Database.Database;
 import java.sql.ResultSet;
 import javax.swing.DefaultListModel;
 

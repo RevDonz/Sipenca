@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package View;
 
-import TubesPBO.Alamat;
-import TubesPBO.Database;
-import TubesPBO.Profile;
+import Model.Alamat;
+import Database.Database;
+import Model.Profile;
 import java.sql.ResultSet;
 import java.util.Date;
 
@@ -16,11 +16,13 @@ import java.util.Date;
  * @author HP
  */
 public class View_Profile extends javax.swing.JFrame {
+    private int id_user;
 
     /**
      * Creates new form Profile
      */
-    public View_Profile() {
+    public View_Profile(int id) {
+        this.id_user = id;
         initComponents();
         getProfil();
     }
@@ -28,7 +30,7 @@ public class View_Profile extends javax.swing.JFrame {
     public void getProfil() {
         try {
             Database db = new Database();
-            String sql = "SELECT * FROM tb_profil WHERE id_profil="+2;
+            String sql = "SELECT * FROM tb_profil WHERE id_profil="+id_user;
             ResultSet profilUser = db.getData(sql);
             Profile profil = null;
             Alamat alamat = null;
@@ -111,11 +113,10 @@ public class View_Profile extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        inputNamaAnggotaKeluarga = new javax.swing.JTextField();
+        inputAlamatAnggotKeluarga = new javax.swing.JTextField();
+        inputTglLahirAnggotaKeluarga = new javax.swing.JTextField();
+        inputKotaLahirAnggotaKeluarga = new javax.swing.JTextField();
         panelAnggotaKeluarga = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -270,20 +271,13 @@ public class View_Profile extends javax.swing.JFrame {
 
         jLabel13.setText("Kota Lahir:");
 
-        jTextField1.setText("jTextField1");
+        inputNamaAnggotaKeluarga.setText("jTextField1");
 
-        jTextField2.setText("jTextField2");
+        inputAlamatAnggotKeluarga.setText("jTextField2");
 
-        jTextField3.setText("jTextField3");
+        inputTglLahirAnggotaKeluarga.setText("jTextField3");
 
-        jTextField4.setText("jTextField4");
-
-        jButton1.setText("Tambah");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        inputKotaLahirAnggotaKeluarga.setText("jTextField4");
 
         javax.swing.GroupLayout panelTambahAnggotaLayout = new javax.swing.GroupLayout(panelTambahAnggota);
         panelTambahAnggota.setLayout(panelTambahAnggotaLayout);
@@ -296,17 +290,13 @@ public class View_Profile extends javax.swing.JFrame {
                     .addComponent(jLabel13)
                     .addComponent(jLabel12)
                     .addComponent(jLabel11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(panelTambahAnggotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
-                    .addComponent(jTextField2)
-                    .addComponent(jTextField3)
-                    .addComponent(jTextField4))
+                    .addComponent(inputNamaAnggotaKeluarga, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
+                    .addComponent(inputAlamatAnggotKeluarga)
+                    .addComponent(inputTglLahirAnggotaKeluarga)
+                    .addComponent(inputKotaLahirAnggotaKeluarga))
                 .addGap(87, 87, 87))
-            .addGroup(panelTambahAnggotaLayout.createSequentialGroup()
-                .addGap(308, 308, 308)
-                .addComponent(jButton1)
-                .addContainerGap(330, Short.MAX_VALUE))
         );
         panelTambahAnggotaLayout.setVerticalGroup(
             panelTambahAnggotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -314,22 +304,20 @@ public class View_Profile extends javax.swing.JFrame {
                 .addGap(73, 73, 73)
                 .addGroup(panelTambahAnggotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputNamaAnggotaKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelTambahAnggotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputAlamatAnggotKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelTambahAnggotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputTglLahirAnggotaKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelTambahAnggotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(75, 75, 75)
-                .addComponent(jButton1)
-                .addContainerGap(90, Short.MAX_VALUE))
+                    .addComponent(inputKotaLahirAnggotaKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(189, Short.MAX_VALUE))
         );
 
         tabbedPaneProfile.addTab("Tambah Anggota", panelTambahAnggota);
@@ -411,53 +399,56 @@ public class View_Profile extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(View_Profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(View_Profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(View_Profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(View_Profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new View_Profile().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(View_Profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(View_Profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(View_Profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(View_Profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new View_Profile().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnUpdate;
     private javax.swing.JButton btnUpdate1;
+    private javax.swing.JTextField inputAlamatAnggotKeluarga;
     private javax.swing.JTextField inputKabKot;
     private javax.swing.JTextField inputKecamatan;
     private javax.swing.JTextField inputKelurahan;
     private javax.swing.JTextField inputKota;
+    private javax.swing.JTextField inputKotaLahirAnggotaKeluarga;
+    private javax.swing.JTextField inputNamaAnggotaKeluarga;
     private javax.swing.JTextField inputNamaProfil;
     private javax.swing.JTextField inputNoRumah;
     private javax.swing.JTextField inputProvinsi;
     private javax.swing.JTextField inputRT;
     private javax.swing.JTextField inputRW;
+    private javax.swing.JTextField inputTglLahirAnggotaKeluarga;
     private javax.swing.JTextField inputTtlProfil;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -467,10 +458,6 @@ public class View_Profile extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JLabel labelAlamat4;
     private javax.swing.JLabel labelAlamat5;
     private javax.swing.JLabel labelAlamat6;

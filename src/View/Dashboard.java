@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package View;
 
 /**
  *
@@ -581,7 +581,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new View_Profile().setVisible(true);
+        new View_Profile(id_user).setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void inputIdPengungsianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputIdPengungsianActionPerformed

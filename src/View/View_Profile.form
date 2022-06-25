@@ -296,7 +296,7 @@
                           <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="37" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="inputNamaAnggotaKeluarga" pref="440" max="32767" attributes="0"/>
                           <Component id="inputAlamatAnggotKeluarga" max="32767" attributes="0"/>
@@ -304,11 +304,6 @@
                           <Component id="inputKotaLahirAnggotaKeluarga" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="308" max="-2" attributes="0"/>
-                      <Component id="btnTambahAnggotaKeluarga" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="330" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -335,9 +330,7 @@
                           <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="inputKotaLahirAnggotaKeluarga" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
-                      <Component id="btnTambahAnggotaKeluarga" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="90" max="32767" attributes="0"/>
+                      <EmptySpace pref="189" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -382,14 +375,6 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="jTextField4"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnTambahAnggotaKeluarga">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Tambah"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTambahAnggotaKeluargaActionPerformed"/>
-              </Events>
             </Component>
           </SubComponents>
         </Container>

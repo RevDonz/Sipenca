@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package View;
 
+import Database.Database;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -112,9 +113,12 @@ public class Login extends javax.swing.JFrame {
         List<Integer> id_users = new ArrayList<>();
         
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_sipenca", "root", "");
-            statement = connection.createStatement();
-            resultset = statement.executeQuery("SELECT * FROM tb_user");
+//            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_sipenca", "root", "");
+//            statement = connection.createStatement();
+//            resultset = statement.executeQuery("SELECT * FROM tb_user");
+            Database db = new Database();
+            String sql = "SELECT * FROM tb_user";
+            resultset = db.getData(sql);
             while (resultset.next()){
                 usernames.add(resultset.getString("username"));
                 passwords.add(resultset.getString("password"));

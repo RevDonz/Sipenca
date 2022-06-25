@@ -3,41 +3,39 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package TubesPBO;
+package Model;
 
 import java.util.Date;
 
 /**
  *
- * @author ASUS
+ * @author HP
  */
-public class Role extends Base {
-    private int id_role;
-    private String nama_role;
+public class Keluarga extends Base {
+    private int id_keluarga;
+    private int kepala_keluarga;
 
-    public Role(int id_role, String nama_role) {
-        this.id_role = id_role;
-        this.nama_role = nama_role;
+    public Keluarga(int id_keluarga, int kepala_keluarga) {
+        this.id_keluarga = id_keluarga;
+        this.kepala_keluarga = kepala_keluarga;
     }
 
-    public int getId_role() {
-        return id_role;
+    public int getId_keluarga() {
+        return id_keluarga;
     }
 
-    public void setId_role(int id_role) {
-        this.id_role = id_role;
+    public void setId_keluarga(int id_keluarga) {
+        this.id_keluarga = id_keluarga;
     }
 
-    public String getNama_role() {
-        return nama_role;
+    public int getKepala_keluarga() {
+        return kepala_keluarga;
     }
 
-    public void setNama_role(String nama_role) {
-        this.nama_role = nama_role;
+    public void setKepala_keluarga(int kepala_keluarga) {
+        this.kepala_keluarga = kepala_keluarga;
     }
     
-    
-
     @Override
     void addData() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -52,4 +50,5 @@ public class Role extends Base {
     void deleteData() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
 }

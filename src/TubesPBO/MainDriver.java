@@ -5,6 +5,16 @@
  */
 package TubesPBO;
 
+import Model.Anggota;
+import Model.Keluarga;
+import Model.Penyakit;
+import Model.Obat;
+import Model.Pengungsian;
+import Model.Pengelola;
+import Model.Role;
+import Model.User;
+import Model.Kebutuhan;
+import Model.Alamat;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;

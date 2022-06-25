@@ -3,48 +3,40 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package TubesPBO;
+package Model;
 
 import java.util.Date;
 
 /**
  *
- * @author HP
+ * @author ASUS
  */
-public class Anggota extends Base {
-    private int id_anggota;
-    private int kepala;
-    private int profil;
+public class Role extends Base {
+    private int id_role;
+    private String nama_role;
 
-    public Anggota(int id_anggota, int kepala, int profil) {
-        this.id_anggota = id_anggota;
-        this.kepala = kepala;
-        this.profil = profil;
+    public Role(int id_role, String nama_role) {
+        this.id_role = id_role;
+        this.nama_role = nama_role;
     }
 
-    public int getProfil() {
-        return profil;
+    public int getId_role() {
+        return id_role;
     }
 
-    public void setProfil(int profil) {
-        this.profil = profil;
+    public void setId_role(int id_role) {
+        this.id_role = id_role;
     }
 
-    public int getId_anggota() {
-        return id_anggota;
+    public String getNama_role() {
+        return nama_role;
     }
 
-    public void setId_anggota(int id_anggota) {
-        this.id_anggota = id_anggota;
+    public void setNama_role(String nama_role) {
+        this.nama_role = nama_role;
     }
-
-    public int getKepala() {
-        return kepala;
-    }
-
-    public void setKepala(int kepala) {
-        this.kepala = kepala;
-    }
+    
+    
 
     @Override
     void addData() {

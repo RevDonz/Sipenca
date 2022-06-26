@@ -5,17 +5,23 @@
  */
 package View;
 
+import javax.swing.ButtonGroup;
+import javax.swing.JTextField;
+import Controller.ControllerRegister;
+
 /**
  *
  * @author HP
  */
 public class RegisterView extends javax.swing.JFrame {
 
+    ControllerRegister cr;
     /**
      * Creates new form Register
      */
     public RegisterView() {
         initComponents();
+        cr = new ControllerRegister();
     }
 
     /**
@@ -27,14 +33,19 @@ public class RegisterView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Role = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        Username = new javax.swing.JTextField();
+        Email = new javax.swing.JTextField();
+        Password = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        WargaRadio = new javax.swing.JRadioButton();
+        SukarelawanRadio = new javax.swing.JRadioButton();
+        PetugasRadio = new javax.swing.JRadioButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,21 +58,21 @@ public class RegisterView extends javax.swing.JFrame {
 
         jLabel4.setText("Password:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        Username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                UsernameActionPerformed(evt);
             }
         });
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        Email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                EmailActionPerformed(evt);
             }
         });
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        Password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                PasswordActionPerformed(evt);
             }
         });
 
@@ -71,6 +82,32 @@ public class RegisterView extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        Role.add(WargaRadio);
+        WargaRadio.setText("Warga");
+        WargaRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WargaRadioActionPerformed(evt);
+            }
+        });
+
+        Role.add(SukarelawanRadio);
+        SukarelawanRadio.setText("Sukarelawan");
+        SukarelawanRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SukarelawanRadioActionPerformed(evt);
+            }
+        });
+
+        Role.add(PetugasRadio);
+        PetugasRadio.setText("Petugas");
+        PetugasRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PetugasRadioActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Role:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -86,16 +123,24 @@ public class RegisterView extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel3)
-                                    .addComponent(jLabel4))
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5))
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField1)
-                                    .addComponent(jTextField2)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(WargaRadio)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(SukarelawanRadio)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(PetugasRadio))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(Username, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE)
+                                        .addComponent(Email, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(Password, javax.swing.GroupLayout.Alignment.TRAILING))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(177, 177, 177)
                         .addComponent(jButton1)))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,16 +150,22 @@ public class RegisterView extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
+                    .addComponent(Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
+                    .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47)
+                    .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(WargaRadio)
+                    .addComponent(SukarelawanRadio)
+                    .addComponent(PetugasRadio)
+                    .addComponent(jLabel5))
+                .addGap(52, 52, 52)
                 .addComponent(jButton1)
                 .addContainerGap(46, Short.MAX_VALUE))
         );
@@ -122,21 +173,33 @@ public class RegisterView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_UsernameActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void EmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_EmailActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_PasswordActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        cr.UserRegister();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void WargaRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WargaRadioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_WargaRadioActionPerformed
+
+    private void SukarelawanRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SukarelawanRadioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SukarelawanRadioActionPerformed
+
+    private void PetugasRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PetugasRadioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PetugasRadioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,13 +238,34 @@ public class RegisterView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Email;
+    private javax.swing.JTextField Password;
+    private javax.swing.JRadioButton PetugasRadio;
+    private javax.swing.ButtonGroup Role;
+    private javax.swing.JRadioButton SukarelawanRadio;
+    private javax.swing.JTextField Username;
+    private javax.swing.JRadioButton WargaRadio;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
+    
+    public JTextField getInputUsername() {
+        return Username;
+    }
+    
+    public JTextField getInputEmail() {
+        return Email;
+    }
+    
+    public JTextField getInputPassword() {
+        return Password;
+    }
+    
+    public ButtonGroup getInputRole() {
+        return Role;
+    }
 }

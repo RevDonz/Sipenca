@@ -5,18 +5,26 @@
  */
 package View;
 
+import Controller.ControllerPengungsian;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Sabre
  */
 public class ViewDashboard extends javax.swing.JFrame {
     private int id_user;
+    ControllerPengungsian cp;
+    
     /**
      * Creates new form Dashboard
      */
     public ViewDashboard(int id) {
         this.id_user = id;
         initComponents();
+        cp = new ControllerPengungsian(this);
+        cp.isiTabel();
     }
 
     /**
@@ -32,11 +40,9 @@ public class ViewDashboard extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableDaftarPengungsian = new javax.swing.JTable();
-        lblIdPengungsian = new javax.swing.JLabel();
         lblNamaTempat = new javax.swing.JLabel();
         lblAlamat = new javax.swing.JLabel();
         lblKapasitas = new javax.swing.JLabel();
-        inputIdPengungsian = new javax.swing.JTextField();
         inputNamaTempat = new javax.swing.JTextField();
         inputAlamat = new javax.swing.JTextField();
         inputKapasitas = new javax.swing.JTextField();
@@ -100,11 +106,7 @@ public class ViewDashboard extends javax.swing.JFrame {
 
         tableDaftarPengungsian.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Id_Pengungsian", "Nama Tempat", "Alamat", "Kapasitas"
@@ -122,26 +124,12 @@ public class ViewDashboard extends javax.swing.JFrame {
         tableDaftarPengungsian.setGridColor(new java.awt.Color(0, 0, 204));
         tableDaftarPengungsian.setSelectionBackground(new java.awt.Color(153, 153, 255));
         jScrollPane1.setViewportView(tableDaftarPengungsian);
-        if (tableDaftarPengungsian.getColumnModel().getColumnCount() > 0) {
-            tableDaftarPengungsian.getColumnModel().getColumn(0).setHeaderValue("Id_Pengungsian");
-            tableDaftarPengungsian.getColumnModel().getColumn(1).setHeaderValue("Nama Tempat");
-            tableDaftarPengungsian.getColumnModel().getColumn(2).setHeaderValue("Alamat");
-            tableDaftarPengungsian.getColumnModel().getColumn(3).setHeaderValue("Kapasitas");
-        }
-
-        lblIdPengungsian.setText("Id_Pengungsian");
 
         lblNamaTempat.setText("Nama Tempat");
 
         lblAlamat.setText("Alamat");
 
         lblKapasitas.setText("Kapasitas");
-
-        inputIdPengungsian.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputIdPengungsianActionPerformed(evt);
-            }
-        });
 
         inputNamaTempat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,24 +148,18 @@ public class ViewDashboard extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(87, Short.MAX_VALUE)
+                .addContainerGap(75, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblAlamat)
-                                    .addComponent(lblNamaTempat)
-                                    .addComponent(lblKapasitas))
-                                .addGap(41, 41, 41)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(inputNamaTempat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(inputAlamat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(inputKapasitas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lblIdPengungsian)
-                                .addGap(29, 29, 29)
-                                .addComponent(inputIdPengungsian, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblAlamat)
+                            .addComponent(lblNamaTempat)
+                            .addComponent(lblKapasitas))
+                        .addGap(41, 41, 41)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(inputNamaTempat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inputAlamat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inputKapasitas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(59, 59, 59)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnTambahDataPengungsian, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -191,11 +173,7 @@ public class ViewDashboard extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(inputIdPengungsian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblIdPengungsian))
-                .addGap(18, 18, 18)
+                .addGap(84, 84, 84)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNamaTempat)
                     .addComponent(inputNamaTempat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -210,7 +188,7 @@ public class ViewDashboard extends javax.swing.JFrame {
                     .addComponent(lblKapasitas)
                     .addComponent(inputKapasitas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnHapusDataPengungsian))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38))
         );
@@ -261,7 +239,7 @@ public class ViewDashboard extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(34, Short.MAX_VALUE)
+                .addContainerGap(22, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 725, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -405,7 +383,7 @@ public class ViewDashboard extends javax.swing.JFrame {
                     .addComponent(btnTambahDataObat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(77, Short.MAX_VALUE)
+                .addContainerGap(65, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 647, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(58, 58, 58))
         );
@@ -482,7 +460,7 @@ public class ViewDashboard extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(151, Short.MAX_VALUE)
+                .addContainerGap(139, Short.MAX_VALUE)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(135, 135, 135))
             .addGroup(jPanel5Layout.createSequentialGroup()
@@ -560,13 +538,16 @@ public class ViewDashboard extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane_DataPengungsian, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane_DataPengungsian)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 24, Short.MAX_VALUE)
-                .addComponent(jTabbedPane_DataPengungsian, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jTabbedPane_DataPengungsian, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 24, Short.MAX_VALUE))
         );
 
         pack();
@@ -583,10 +564,6 @@ public class ViewDashboard extends javax.swing.JFrame {
         this.dispose();
         new ViewProfile(id_user).setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void inputIdPengungsianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputIdPengungsianActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputIdPengungsianActionPerformed
 
     private void inputNamaTempatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNamaTempatActionPerformed
         // TODO add your handling code here:
@@ -645,7 +622,6 @@ public class ViewDashboard extends javax.swing.JFrame {
     private javax.swing.JTextField inputAlamat;
     private javax.swing.JTextField inputIdKebutuhan;
     private javax.swing.JTextField inputIdObat;
-    private javax.swing.JTextField inputIdPengungsian;
     private javax.swing.JTextField inputIdPenyakit;
     private javax.swing.JTextField inputJumlahKebutuhan;
     private javax.swing.JTextField inputJumlahObat;
@@ -676,7 +652,6 @@ public class ViewDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel lblAlamat;
     private javax.swing.JLabel lblIdKebutuhan;
     private javax.swing.JLabel lblIdObat;
-    private javax.swing.JLabel lblIdPengungsian;
     private javax.swing.JLabel lblIdPenyakit;
     private javax.swing.JLabel lblJumlahKebutuhan;
     private javax.swing.JLabel lblJumlahObat;
@@ -696,4 +671,36 @@ public class ViewDashboard extends javax.swing.JFrame {
     private javax.swing.JTable tableDataObat;
     private javax.swing.JTable tableDataPenyakit;
     // End of variables declaration//GEN-END:variables
+    
+    public JTextField getInputNamaTempat() {
+        return inputNamaTempat;
+    }
+    
+    public void setInputNamaTempat(JTextField inputNamaTempat) {
+        this.inputNamaTempat = inputNamaTempat;
+    }
+    
+    public JTextField getInputAlamat() {
+        return inputAlamat;
+    }
+    
+    public void setInputAlamat(JTextField inputAlamat) {
+        this.inputAlamat = inputAlamat;
+    }
+    
+    public JTextField getInputKapasitas() {
+        return inputKapasitas;
+    }
+    
+    public void setInputKapasitas(JTextField inputKapasitas) {
+        this.inputKapasitas = inputKapasitas;
+    }
+    
+    public JTable getTablePengungsian() {
+        return tableDaftarPengungsian;
+    }
+    
+    public void setTablePengungsian(JTable tableDaftarPengungsian) {
+        this.tableDaftarPengungsian = tableDaftarPengungsian;
+    }
 }

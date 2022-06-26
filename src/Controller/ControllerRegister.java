@@ -9,7 +9,7 @@ public class ControllerRegister {
     RegisterView frame;
     RegisterDAO rd;
 
-    public ControllerRegister() {
+    public ControllerRegister(RegisterView frame) {
         this.frame = frame;
         rd = new RegisterDAO();
     }
@@ -21,6 +21,7 @@ public class ControllerRegister {
         String email = frame.getInputEmail().getText();
         String password = frame.getInputPassword().getText();
         String s_role = frame.getInputRole().getSelection().getActionCommand();
+        System.out.println(s_role);
         if (s_role == "Warga") {
             role = 2;
         } else if ((s_role == "Sukarelawan") || (s_role == "Petugas")) {

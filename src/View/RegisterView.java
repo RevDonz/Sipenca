@@ -21,7 +21,7 @@ public class RegisterView extends javax.swing.JFrame {
      */
     public RegisterView() {
         initComponents();
-        cr = new ControllerRegister();
+        cr = new ControllerRegister(this);
     }
 
     /**

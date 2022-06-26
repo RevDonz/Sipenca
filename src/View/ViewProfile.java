@@ -108,7 +108,7 @@ public class ViewProfile extends javax.swing.JFrame {
             }
         });
 
-        btnBack.setText("Update");
+        btnBack.setText("Kembali");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);

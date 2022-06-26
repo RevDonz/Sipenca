@@ -23,8 +23,8 @@ public class ControllerLogin {
     }
     
     public void UserLogin() {
-        String username = frame.getInputUsername();
-        String password = frame.getInputPassword();
+        String username = frame.getInputUsername().getText();
+        String password = frame.getInputPassword().getText();
         
         int uindex = ld.usernames.indexOf(username);
         int role = ld.login(username, password);

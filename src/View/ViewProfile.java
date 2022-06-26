@@ -5,76 +5,32 @@
  */
 package View;
 
-import Model.Alamat;
-import Database.Database;
-import Model.Profile;
-import java.sql.ResultSet;
-import java.util.Date;
+import Controller.ControllerAlamat;
+import Controller.ControllerProfil;
+import javax.swing.JTextField;
 
 /**
  *
  * @author HP
  */
-public class ProfileView extends javax.swing.JFrame {
+public class ViewProfile extends javax.swing.JFrame {
     private int id_user;
-
+    ControllerProfil cf;
+    ControllerAlamat ca;
+    
     /**
      * Creates new form Profile
      */
-    public ProfileView(int id) {
+    public ViewProfile(int id) {
         this.id_user = id;
         initComponents();
-//        getProfil();
+        cf = new ControllerProfil(this);
+        ca = new ControllerAlamat(this);
+        
+        cf.isiForm();
+        ca.isiForm();
     }
     
-//    public void getProfil() {
-//        try {
-//            Database db = new Database();
-//            String sql = "SELECT * FROM tb_profil WHERE id_profil="+id_user;
-//            ResultSet profilUser = db.getData(sql);
-//            Profile profil = null;
-//            Alamat alamat = null;
-//            
-//            while (profilUser.next()) {
-//                int id = profilUser.getInt("id_profil");
-//                int alamatUser = profilUser.getInt("alamat_user");
-//                String namaLengkap = profilUser.getString("nama_lengkap");
-//                String kotaLahir = profilUser.getString("kota_lahir");
-//                Date tanggalLahir = profilUser.getDate("tanggal_lahir");
-//                profil = new Profile(id, alamatUser, namaLengkap, kotaLahir, tanggalLahir);
-//            }
-//            
-//            String sql2 = "SELECT * FROM tb_alamat WHERE id_alamat="+profil.getAlamat_user();
-//            ResultSet alamatUser = db.getData(sql2);
-//            
-//            while (alamatUser.next()) {
-//                int id_alamat = alamatUser.getInt("id_alamat");
-//                String provinsi = alamatUser.getString("provinsi");
-//                String kab_kot = alamatUser.getString("kab_kota");
-//                String kecamatan = alamatUser.getString("kecamatan");
-//                String kelurahan = alamatUser.getString("kelurahan");
-//                int rt = alamatUser.getInt("rt");
-//                int rw = alamatUser.getInt("rw");
-//                int nomorRumah = alamatUser.getInt("nomorRumah");
-//                alamat = new Alamat(id_alamat, provinsi, kab_kot, kecamatan, kelurahan, rt, rw, nomorRumah);
-//            }
-//            
-//            inputNamaProfil.setText(profil.getNama_lengkap());
-//            inputKota.setText(profil.getKota_lahir());
-//            inputTtlProfil.setText(profil.getTanggal_lahir().toString());
-//            inputProvinsi.setText(alamat.getProvinsi());
-//            inputKabKot.setText(alamat.getKab_kot());
-//            inputKecamatan.setText(alamat.getKecamatan());
-//            inputKelurahan.setText(alamat.getKelurahan());
-//            inputRT.setText(String.valueOf(alamat.getRt()));
-//            inputRW.setText(String.valueOf(alamat.getRw()));
-//            inputNoRumah.setText(String.valueOf(alamat.getNomorRumah()));
-//            
-//        } catch(Exception e) {
-//            System.out.println(e);
-//        }
-//    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -413,13 +369,13 @@ public class ProfileView extends javax.swing.JFrame {
 //                }
 //            }
 //        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(ProfileView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(ViewProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(ProfileView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(ViewProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(ProfileView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(ViewProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(ProfileView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(ViewProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        }
 //        //</editor-fold>
 //        //</editor-fold>
@@ -427,7 +383,7 @@ public class ProfileView extends javax.swing.JFrame {
 //        /* Create and display the form */
 //        java.awt.EventQueue.invokeLater(new Runnable() {
 //            public void run() {
-//                new ProfileView().setVisible(true);
+//                new ViewProfile().setVisible(true);
 //            }
 //        });
 //    }
@@ -473,4 +429,85 @@ public class ProfileView extends javax.swing.JFrame {
     private javax.swing.JPanel panelTambahAnggota;
     private javax.swing.JTabbedPane tabbedPaneProfile;
     // End of variables declaration//GEN-END:variables
+    
+    public JTextField getInputNamaProfil() {
+        return inputNamaProfil;
+    }
+    
+    public void setInputNamaProfil(JTextField inputNamaProfil) {
+        this.inputNamaProfil = inputNamaProfil;
+    }
+    
+    public JTextField getInputKota() {
+        return inputKota;
+    }
+    
+    public void setInputKota(JTextField inputKota) {
+        this.inputKota = inputKota;
+    }
+    
+    public JTextField getInputTtlProfil() {
+        return inputTtlProfil;
+    }
+    
+    public void setInputTtlProfil(JTextField inputTtlProfil) {
+        this.inputTtlProfil = inputTtlProfil;
+    }
+    
+    public JTextField getInputProvinsi() {
+        return inputProvinsi;
+    }
+    
+    public void setInputProvinsi(JTextField inputProvinsi) {
+        this.inputProvinsi = inputProvinsi;
+    }
+    
+    public JTextField getInputKabKot() {
+        return inputKabKot;
+    }
+    
+    public void setInputKabKot(JTextField inputKabKot) {
+        this.inputKabKot = inputKabKot;
+    }
+    
+    public JTextField getInputRT() {
+        return inputRT;
+    }
+    
+    public void setInputRT(JTextField inputRT) {
+        this.inputRT = inputRT;
+    }
+    
+    public JTextField getInputRW() {
+        return inputRW;
+    }
+    
+    public void setInputRW(JTextField inputRW) {
+        this.inputRW = inputRW;
+    }
+    
+    public JTextField getInputKelurahan() {
+        return inputKelurahan;
+    }
+    
+    public void setInputKelurahan(JTextField inputKelurahan) {
+        this.inputKelurahan = inputKelurahan;
+    }
+    
+    public JTextField getInputKecamatan() {
+        return inputKecamatan;
+    }
+    
+    public void setInputKecamatan(JTextField inputKecamatan) {
+        this.inputKecamatan = inputKecamatan;
+    }
+    
+    public JTextField getInputNoRumah() {
+        return inputNoRumah;
+    }
+    
+    public void setInputNoRumah(JTextField inputNoRumah) {
+        this.inputNoRumah = inputNoRumah;
+    }
+    
 }

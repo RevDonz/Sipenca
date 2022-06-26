@@ -13,14 +13,14 @@ import java.util.Date;
  *
  * @author Ricky Rohaendi
  */
-public class Profile extends Base {
+public class Profile {
     private int id_profil;
     private int alamat_user;
     private String nama_lengkap;
     private String kota_lahir;
     private Date tanggal_lahir;
 
-    public Profile(int id_profil, int alamat_user, String nama_lengkap, String kota_lahir, Date tanggal_lahir) throws ParseException {
+    public Profile(int id_profil, int alamat_user, String nama_lengkap, String kota_lahir, Date tanggal_lahir) {
         this.id_profil = id_profil;
         this.alamat_user = alamat_user;
         this.nama_lengkap = nama_lengkap;
@@ -70,20 +70,4 @@ public class Profile extends Base {
         this.tanggal_lahir = date;
     }
     
-    
-    
-    @Override
-    void addData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    void updateData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    void deleteData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

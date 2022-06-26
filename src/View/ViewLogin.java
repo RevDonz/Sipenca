@@ -151,16 +151,16 @@ public class ViewLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
-    public String getInputUsername() {
-        return inputUsername.getText();
+    public JTextField getInputUsername() {
+        return inputUsername;
     }
     
     public void setInputUsername(JTextField inputUsername) {
         this.inputUsername = inputUsername;
     }
     
-    public String getInputPassword() {
-        return inputPassword.getText();
+    public JTextField getInputPassword() {
+        return inputPassword;
     }
     
     public void setInputPassword(JTextField inputPassword) {

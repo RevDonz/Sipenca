@@ -581,7 +581,7 @@ public class ViewDashboard extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new ProfileView(id_user).setVisible(true);
+        new ViewProfile(id_user).setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void inputIdPengungsianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputIdPengungsianActionPerformed

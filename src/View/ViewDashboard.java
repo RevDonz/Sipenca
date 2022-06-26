@@ -5,7 +5,9 @@
  */
 package View;
 
+import Controller.ControllerKebutuhan;
 import Controller.ControllerPengungsian;
+import javax.swing.JCheckBox;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
@@ -16,6 +18,7 @@ import javax.swing.JTextField;
 public class ViewDashboard extends javax.swing.JFrame {
     private int id_user;
     ControllerPengungsian cp;
+    ControllerKebutuhan ck;
     
     /**
      * Creates new form Dashboard
@@ -24,7 +27,10 @@ public class ViewDashboard extends javax.swing.JFrame {
         this.id_user = id;
         initComponents();
         cp = new ControllerPengungsian(this);
+        ck = new ControllerKebutuhan(this);
+        
         cp.isiTabel();
+        ck.isiTabel();
     }
 
     /**
@@ -52,18 +58,16 @@ public class ViewDashboard extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableDaftarKebutuhan = new javax.swing.JTable();
-        lblIdKebutuhan = new javax.swing.JLabel();
         lblKeluarga = new javax.swing.JLabel();
         lblNamaBarang = new javax.swing.JLabel();
         lblSatuanKebutuhan = new javax.swing.JLabel();
         lblJumlahKebutuhan = new javax.swing.JLabel();
         lblKebutuhanPokok = new javax.swing.JLabel();
-        inputIdKebutuhan = new javax.swing.JTextField();
         inputKeluarga = new javax.swing.JTextField();
         inputNamaBarang = new javax.swing.JTextField();
         inputSatuanKebutuhan = new javax.swing.JTextField();
         inputJumlahKebutuhan = new javax.swing.JTextField();
-        checkboxKebutuhaNPokok = new javax.swing.JCheckBox();
+        checkKebutuhanPokok = new javax.swing.JCheckBox();
         btnTambahDataKebutuhan = new javax.swing.JButton();
         btnUbahDataKebutuhan = new javax.swing.JButton();
         btnHapusDataKebutuhan = new javax.swing.JButton();
@@ -123,6 +127,11 @@ public class ViewDashboard extends javax.swing.JFrame {
         tableDaftarPengungsian.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         tableDaftarPengungsian.setGridColor(new java.awt.Color(0, 0, 204));
         tableDaftarPengungsian.setSelectionBackground(new java.awt.Color(153, 153, 255));
+        tableDaftarPengungsian.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableDaftarPengungsianMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tableDaftarPengungsian);
 
         lblNamaTempat.setText("Nama Tempat");
@@ -197,10 +206,7 @@ public class ViewDashboard extends javax.swing.JFrame {
 
         tableDaftarKebutuhan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "Id_Kebutuhan", "Keluarga", "Nama Barang", "Satuan", "Jumlah", "Kebutuhan Pokok / Bukan"
@@ -214,9 +220,12 @@ public class ViewDashboard extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        tableDaftarKebutuhan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableDaftarKebutuhanMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tableDaftarKebutuhan);
-
-        lblIdKebutuhan.setText("Id_Kebutuhan");
 
         lblKeluarga.setText("Keluarga");
 
@@ -246,15 +255,13 @@ public class ViewDashboard extends javax.swing.JFrame {
                 .addGap(82, 82, 82)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblKeluarga)
-                    .addComponent(lblIdKebutuhan)
                     .addComponent(lblNamaBarang))
-                .addGap(34, 34, 34)
+                .addGap(35, 35, 35)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(inputIdKebutuhan, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
-                    .addComponent(inputNamaBarang)
+                    .addComponent(inputNamaBarang, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
                     .addComponent(inputKeluarga))
                 .addGap(40, 40, 40)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblJumlahKebutuhan)
@@ -263,10 +270,10 @@ public class ViewDashboard extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(inputSatuanKebutuhan, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(inputJumlahKebutuhan, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                         .addComponent(lblKebutuhanPokok)
                         .addGap(18, 18, 18)
-                        .addComponent(checkboxKebutuhaNPokok)))
+                        .addComponent(checkKebutuhanPokok)))
                 .addGap(44, 44, 44)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnTambahDataKebutuhan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -277,35 +284,26 @@ public class ViewDashboard extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblIdKebutuhan)
-                            .addComponent(inputIdKebutuhan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblSatuanKebutuhan)
-                            .addComponent(inputSatuanKebutuhan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnTambahDataKebutuhan))))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblSatuanKebutuhan)
+                    .addComponent(inputSatuanKebutuhan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnTambahDataKebutuhan)
+                    .addComponent(inputKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblKeluarga))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputJumlahKebutuhan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnUbahDataKebutuhan)
+                    .addComponent(inputNamaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNamaBarang)
+                    .addComponent(lblJumlahKebutuhan))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblKeluarga)
-                    .addComponent(lblJumlahKebutuhan)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(inputKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(inputJumlahKebutuhan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnUbahDataKebutuhan)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblNamaBarang)
-                        .addComponent(lblKebutuhanPokok)
-                        .addComponent(inputNamaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(checkboxKebutuhaNPokok))
-                    .addComponent(btnHapusDataKebutuhan))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                    .addComponent(btnHapusDataKebutuhan)
+                    .addComponent(checkKebutuhanPokok)
+                    .addComponent(lblKebutuhanPokok))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43))
         );
@@ -569,6 +567,16 @@ public class ViewDashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputNamaTempatActionPerformed
 
+    private void tableDaftarPengungsianMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDaftarPengungsianMouseClicked
+        // TODO add your handling code here:
+        cp.isiTextField(tableDaftarPengungsian.getSelectedRow());
+    }//GEN-LAST:event_tableDaftarPengungsianMouseClicked
+
+    private void tableDaftarKebutuhanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDaftarKebutuhanMouseClicked
+        // TODO add your handling code here:
+        ck.isiTextField(tableDaftarKebutuhan.getSelectedRow());
+    }//GEN-LAST:event_tableDaftarKebutuhanMouseClicked
+
 
     /**
      * @param args the command line arguments
@@ -618,9 +626,8 @@ public class ViewDashboard extends javax.swing.JFrame {
     private javax.swing.JButton btnUbahDataObat;
     private javax.swing.JButton btnUbahDataPengungsian;
     private javax.swing.JButton btnUbahDataPenyakit;
-    private javax.swing.JCheckBox checkboxKebutuhaNPokok;
+    private javax.swing.JCheckBox checkKebutuhanPokok;
     private javax.swing.JTextField inputAlamat;
-    private javax.swing.JTextField inputIdKebutuhan;
     private javax.swing.JTextField inputIdObat;
     private javax.swing.JTextField inputIdPenyakit;
     private javax.swing.JTextField inputJumlahKebutuhan;
@@ -650,7 +657,6 @@ public class ViewDashboard extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane_DataPengungsian;
     private javax.swing.JLabel lblAlamat;
-    private javax.swing.JLabel lblIdKebutuhan;
     private javax.swing.JLabel lblIdObat;
     private javax.swing.JLabel lblIdPenyakit;
     private javax.swing.JLabel lblJumlahKebutuhan;
@@ -702,5 +708,53 @@ public class ViewDashboard extends javax.swing.JFrame {
     
     public void setTablePengungsian(JTable tableDaftarPengungsian) {
         this.tableDaftarPengungsian = tableDaftarPengungsian;
+    }
+    
+    public JTextField getInputKeluarga() {
+        return inputKeluarga;
+    }
+    
+    public void setInputKeluarga(JTextField inputKeluarga) {
+        this.inputKeluarga = inputKeluarga;
+    }
+    
+    public JTextField getInputSatuanKebutuhan() {
+        return inputSatuanKebutuhan;
+    }
+    
+    public void setInputSatuanKebutuhan(JTextField inputSatuanKebutuhan) {
+        this.inputSatuanKebutuhan = inputSatuanKebutuhan;
+    }
+    
+    public JTextField getInputNamaBarang() {
+        return inputNamaBarang;
+    }
+    
+    public void setInputNamaBarang(JTextField inputNamaBarang) {
+        this.inputNamaBarang = inputNamaBarang;
+    }
+    
+    public JTextField getInputJumlahKebutuhan() {
+        return inputJumlahKebutuhan;
+    }
+    
+    public void setInputJumlahKebutuhan(JTextField inputJumlahKebutuhan) {
+        this.inputJumlahKebutuhan = inputJumlahKebutuhan;
+    }
+    
+    public JCheckBox getcheckKebutuhanPokok() {
+        return checkKebutuhanPokok;
+    }
+    
+    public void setcheckKebutuhanPokok(JCheckBox checkKebutuhanPokok) {
+        this.checkKebutuhanPokok = checkKebutuhanPokok;
+    }
+    
+    public JTable getTableKebutuhan() {
+        return tableDaftarKebutuhan;
+    }
+    
+    public void setTableKebutuhan(JTable tableDaftarKebutuhan) {
+        this.tableDaftarKebutuhan = tableDaftarKebutuhan;
     }
 }

@@ -5,7 +5,6 @@
  */
 package View;
 
-import Controller.ControllerAlamat;
 import Controller.ControllerProfil;
 import javax.swing.JTextField;
 
@@ -16,7 +15,6 @@ import javax.swing.JTextField;
 public class ViewProfile extends javax.swing.JFrame {
     private int id_user;
     ControllerProfil cf;
-    ControllerAlamat ca;
     
     /**
      * Creates new form Profile
@@ -24,11 +22,10 @@ public class ViewProfile extends javax.swing.JFrame {
     public ViewProfile(int id) {
         this.id_user = id;
         initComponents();
-        cf = new ControllerProfil(this);
-        ca = new ControllerAlamat(this);
+        cf = new ControllerProfil(this, id);
         
         cf.isiForm();
-        ca.isiForm();
+        cf.isiFormAlamat();
     }
     
     /**
@@ -63,7 +60,7 @@ public class ViewProfile extends javax.swing.JFrame {
         labelAlamat6 = new javax.swing.JLabel();
         inputNoRumah = new javax.swing.JTextField();
         btnUpdate = new javax.swing.JButton();
-        btnUpdate1 = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
         panelTambahAnggota = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -111,10 +108,10 @@ public class ViewProfile extends javax.swing.JFrame {
             }
         });
 
-        btnUpdate1.setText("Kembali");
-        btnUpdate1.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setText("Kembali");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUpdate1ActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
 
@@ -168,7 +165,7 @@ public class ViewProfile extends javax.swing.JFrame {
                     .addGroup(panelProfileLayout.createSequentialGroup()
                         .addComponent(inputNoRumah, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnUpdate1)
+                        .addComponent(btnBack)
                         .addGap(18, 18, 18)
                         .addComponent(btnUpdate)))
                 .addContainerGap(67, Short.MAX_VALUE))
@@ -213,7 +210,7 @@ public class ViewProfile extends javax.swing.JFrame {
                         .addComponent(inputNoRumah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnUpdate)
-                        .addComponent(btnUpdate1)))
+                        .addComponent(btnBack)))
                 .addContainerGap(68, Short.MAX_VALUE))
         );
 
@@ -348,9 +345,11 @@ public class ViewProfile extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnUpdateActionPerformed
 
-    private void btnUpdate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdate1ActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnUpdate1ActionPerformed
+        this.dispose();
+        new ViewDashboard(id_user).setVisible(true);
+    }//GEN-LAST:event_btnBackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -389,8 +388,8 @@ public class ViewProfile extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnUpdate;
-    private javax.swing.JButton btnUpdate1;
     private javax.swing.JTextField inputAlamatAnggotKeluarga;
     private javax.swing.JTextField inputKabKot;
     private javax.swing.JTextField inputKecamatan;

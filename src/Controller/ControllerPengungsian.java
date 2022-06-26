@@ -38,4 +38,10 @@ public class ControllerPengungsian {
             model.addRow(rowData);
         }
     }
+    
+    public void isiTextField(int row) {
+        frame.getInputNamaTempat().setText(arrPengungsian.get(row).getNama_tempat());
+        frame.getInputAlamat().setText(String.valueOf(arrPengungsian.get(row).getAlamat()));
+        frame.getInputKapasitas().setText(String.valueOf(arrPengungsian.get(row).getKapasitas_tempat()));
+    }
 }

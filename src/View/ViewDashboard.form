@@ -198,6 +198,9 @@
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tableDaftarPengungsianMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -263,18 +266,16 @@
                       <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lblKeluarga" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblIdKebutuhan" min="-2" max="-2" attributes="0"/>
                           <Component id="lblNamaBarang" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="inputIdKebutuhan" pref="116" max="32767" attributes="0"/>
-                          <Component id="inputNamaBarang" max="32767" attributes="0"/>
+                          <Component id="inputNamaBarang" pref="116" max="32767" attributes="0"/>
                           <Component id="inputKeluarga" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="lblJumlahKebutuhan" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblSatuanKebutuhan" min="-2" max="-2" attributes="0"/>
@@ -288,7 +289,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="lblKebutuhanPokok" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="checkboxKebutuhaNPokok" min="-2" max="-2" attributes="0"/>
+                              <Component id="checkKebutuhanPokok" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
@@ -304,44 +305,29 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblIdKebutuhan" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="inputIdKebutuhan" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblSatuanKebutuhan" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="inputSatuanKebutuhan" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnTambahDataKebutuhan" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblSatuanKebutuhan" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputSatuanKebutuhan" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnTambahDataKebutuhan" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputKeluarga" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblKeluarga" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="inputJumlahKebutuhan" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnUbahDataKebutuhan" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputNamaBarang" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNamaBarang" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblJumlahKebutuhan" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblKeluarga" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblJumlahKebutuhan" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="inputKeluarga" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="inputJumlahKebutuhan" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnUbahDataKebutuhan" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblNamaBarang" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblKebutuhanPokok" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="inputNamaBarang" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="checkboxKebutuhaNPokok" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
                           <Component id="btnHapusDataKebutuhan" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkKebutuhanPokok" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblKebutuhanPokok" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="50" max="32767" attributes="0"/>
+                      <EmptySpace pref="40" max="32767" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="203" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                   </Group>
@@ -359,7 +345,7 @@
                 <Component class="javax.swing.JTable" name="tableDaftarKebutuhan">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="6" rowCount="4">
+                      <Table columnCount="6" rowCount="0">
                         <Column editable="true" title="Id_Kebutuhan" type="java.lang.Integer"/>
                         <Column editable="true" title="Keluarga" type="java.lang.Integer"/>
                         <Column editable="true" title="Nama Barang" type="java.lang.String"/>
@@ -406,14 +392,12 @@
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tableDaftarKebutuhanMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="lblIdKebutuhan">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Id_Kebutuhan"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="lblKeluarga">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Keluarga"/>
@@ -439,8 +423,6 @@
                 <Property name="text" type="java.lang.String" value="Kebutuhan Pokok"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="inputIdKebutuhan">
-            </Component>
             <Component class="javax.swing.JTextField" name="inputKeluarga">
             </Component>
             <Component class="javax.swing.JTextField" name="inputNamaBarang">
@@ -449,7 +431,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="inputJumlahKebutuhan">
             </Component>
-            <Component class="javax.swing.JCheckBox" name="checkboxKebutuhaNPokok">
+            <Component class="javax.swing.JCheckBox" name="checkKebutuhanPokok">
             </Component>
             <Component class="javax.swing.JButton" name="btnTambahDataKebutuhan">
               <Properties>

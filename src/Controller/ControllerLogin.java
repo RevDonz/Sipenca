@@ -30,7 +30,7 @@ public class ControllerLogin {
         int role = ld.login(username, password);
         int id_user = ld.id_users.get(uindex);
         
-        if(role == 1) {
+        if(role != 0) {
             frame.dispose();
             new ViewDashboard(id_user).setVisible(true);
         }

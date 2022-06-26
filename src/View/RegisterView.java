@@ -8,6 +8,7 @@ package View;
 import javax.swing.ButtonGroup;
 import javax.swing.JTextField;
 import Controller.ControllerRegister;
+import javax.swing.JRadioButton;
 
 /**
  *
@@ -21,7 +22,7 @@ public class RegisterView extends javax.swing.JFrame {
      */
     public RegisterView() {
         initComponents();
-        cr = new ControllerRegister();
+        cr = new ControllerRegister(this);
     }
 
     /**
@@ -267,5 +268,17 @@ public class RegisterView extends javax.swing.JFrame {
     
     public ButtonGroup getInputRole() {
         return Role;
+    }
+    
+    public JRadioButton getInputWarga() {
+        return WargaRadio;
+    }
+    
+    public JRadioButton getInputSukarelawan() {
+        return SukarelawanRadio;
+    }
+    
+    public JRadioButton getInputPetugas() {
+        return PetugasRadio;
     }
 }

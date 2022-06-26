@@ -24,56 +24,56 @@ public class ProfileView extends javax.swing.JFrame {
     public ProfileView(int id) {
         this.id_user = id;
         initComponents();
-        getProfil();
+//        getProfil();
     }
     
-    public void getProfil() {
-        try {
-            Database db = new Database();
-            String sql = "SELECT * FROM tb_profil WHERE id_profil="+id_user;
-            ResultSet profilUser = db.getData(sql);
-            Profile profil = null;
-            Alamat alamat = null;
-            
-            while (profilUser.next()) {
-                int id = profilUser.getInt("id_profil");
-                int alamatUser = profilUser.getInt("alamat_user");
-                String namaLengkap = profilUser.getString("nama_lengkap");
-                String kotaLahir = profilUser.getString("kota_lahir");
-                Date tanggalLahir = profilUser.getDate("tanggal_lahir");
-                profil = new Profile(id, alamatUser, namaLengkap, kotaLahir, tanggalLahir);
-            }
-            
-            String sql2 = "SELECT * FROM tb_alamat WHERE id_alamat="+profil.getAlamat_user();
-            ResultSet alamatUser = db.getData(sql2);
-            
-            while (alamatUser.next()) {
-                int id_alamat = alamatUser.getInt("id_alamat");
-                String provinsi = alamatUser.getString("provinsi");
-                String kab_kot = alamatUser.getString("kab_kota");
-                String kecamatan = alamatUser.getString("kecamatan");
-                String kelurahan = alamatUser.getString("kelurahan");
-                int rt = alamatUser.getInt("rt");
-                int rw = alamatUser.getInt("rw");
-                int nomorRumah = alamatUser.getInt("nomorRumah");
-                alamat = new Alamat(id_alamat, provinsi, kab_kot, kecamatan, kelurahan, rt, rw, nomorRumah);
-            }
-            
-            inputNamaProfil.setText(profil.getNama_lengkap());
-            inputKota.setText(profil.getKota_lahir());
-            inputTtlProfil.setText(profil.getTanggal_lahir().toString());
-            inputProvinsi.setText(alamat.getProvinsi());
-            inputKabKot.setText(alamat.getKab_kot());
-            inputKecamatan.setText(alamat.getKecamatan());
-            inputKelurahan.setText(alamat.getKelurahan());
-            inputRT.setText(String.valueOf(alamat.getRt()));
-            inputRW.setText(String.valueOf(alamat.getRw()));
-            inputNoRumah.setText(String.valueOf(alamat.getNomorRumah()));
-            
-        } catch(Exception e) {
-            System.out.println(e);
-        }
-    }
+//    public void getProfil() {
+//        try {
+//            Database db = new Database();
+//            String sql = "SELECT * FROM tb_profil WHERE id_profil="+id_user;
+//            ResultSet profilUser = db.getData(sql);
+//            Profile profil = null;
+//            Alamat alamat = null;
+//            
+//            while (profilUser.next()) {
+//                int id = profilUser.getInt("id_profil");
+//                int alamatUser = profilUser.getInt("alamat_user");
+//                String namaLengkap = profilUser.getString("nama_lengkap");
+//                String kotaLahir = profilUser.getString("kota_lahir");
+//                Date tanggalLahir = profilUser.getDate("tanggal_lahir");
+//                profil = new Profile(id, alamatUser, namaLengkap, kotaLahir, tanggalLahir);
+//            }
+//            
+//            String sql2 = "SELECT * FROM tb_alamat WHERE id_alamat="+profil.getAlamat_user();
+//            ResultSet alamatUser = db.getData(sql2);
+//            
+//            while (alamatUser.next()) {
+//                int id_alamat = alamatUser.getInt("id_alamat");
+//                String provinsi = alamatUser.getString("provinsi");
+//                String kab_kot = alamatUser.getString("kab_kota");
+//                String kecamatan = alamatUser.getString("kecamatan");
+//                String kelurahan = alamatUser.getString("kelurahan");
+//                int rt = alamatUser.getInt("rt");
+//                int rw = alamatUser.getInt("rw");
+//                int nomorRumah = alamatUser.getInt("nomorRumah");
+//                alamat = new Alamat(id_alamat, provinsi, kab_kot, kecamatan, kelurahan, rt, rw, nomorRumah);
+//            }
+//            
+//            inputNamaProfil.setText(profil.getNama_lengkap());
+//            inputKota.setText(profil.getKota_lahir());
+//            inputTtlProfil.setText(profil.getTanggal_lahir().toString());
+//            inputProvinsi.setText(alamat.getProvinsi());
+//            inputKabKot.setText(alamat.getKab_kot());
+//            inputKecamatan.setText(alamat.getKecamatan());
+//            inputKelurahan.setText(alamat.getKelurahan());
+//            inputRT.setText(String.valueOf(alamat.getRt()));
+//            inputRW.setText(String.valueOf(alamat.getRw()));
+//            inputNoRumah.setText(String.valueOf(alamat.getNomorRumah()));
+//            
+//        } catch(Exception e) {
+//            System.out.println(e);
+//        }
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.

@@ -5,49 +5,45 @@
  */
 package Database;
 
+import com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource;
+import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import javax.swing.JOptionPane;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author ASUS
  */
+
 public class Database {
-    static final String DB_URL = "jdbc:mysql://localhost/db_sipenca";
-    static final String DB_USER = "root";
-    static final String DB_PASS = "";
     static Connection conn;
-    static Statement statement;
-    static ResultSet rs;
+    public static Connection connect(){
+        if(conn == null){
+            MysqlDataSource data = new MysqlConnectionPoolDataSource();
+            data.setPort(3306);
+            data.setDatabaseName("db_sipenca");
+            data.setUser("root");
+            data.setPassword("");
+            try {
+                conn = data.getConnection();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return conn;
+    }
     
-    public Database() throws SQLException {
+    public static boolean isConnect(){
         try {
-            conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
-            statement = conn.createStatement();
-        } catch(Exception e) {
-            JOptionPane.showMessageDialog(null, ""+e.getMessage(), "Connection Error", JOptionPane.WARNING_MESSAGE);
+            if (connect()==null){
+                return false;
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-    
-    public ResultSet getData(String SQLString){
-        try{
-            rs = statement.executeQuery(SQLString);
-        } catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Error : " + e.getMessage(), "Communication Error", JOptionPane.WARNING_MESSAGE);
-        }
-        return rs;
-    }
-    
-    public void query(String SQLString){
-        try{
-            statement.executeUpdate(SQLString);
-        } catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Error : " + e.getMessage(), "Communication Error",
-            JOptionPane.WARNING_MESSAGE);
-        }
+        return true;
     }
 }
+

@@ -20,23 +20,23 @@ public class ListUser extends javax.swing.JFrame {
      */
     public ListUser() {
         initComponents();
-        displayData();
+//        displayData();
     }
     
-    public void displayData() {
-        try {
-            DefaultListModel<String> model = new DefaultListModel<>();
-            Database db = new Database();
-            String sql = "SELECT * FROM tb_user";
-            ResultSet result = db.getData(sql);
-            while (result.next()) {
-                model.addElement(result.getString("username"));
-            }
-            listUser.setModel(model);
-        } catch(Exception e) {
-            System.out.println(e);
-        }
-    }
+//    public void displayData() {
+//        try {
+//            DefaultListModel<String> model = new DefaultListModel<>();
+//            Database db = new Database();
+//            String sql = "SELECT * FROM tb_user";
+//            ResultSet result = db.getData(sql);
+//            while (result.next()) {
+//                model.addElement(result.getString("username"));
+//            }
+//            listUser.setModel(model);
+//        } catch(Exception e) {
+//            System.out.println(e);
+//        }
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.

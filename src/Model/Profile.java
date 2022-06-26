@@ -25,9 +25,6 @@ public class Profile extends Base {
         this.alamat_user = alamat_user;
         this.nama_lengkap = nama_lengkap;
         this.kota_lahir = kota_lahir;
-        
-//        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-//        Date date = formatter.parse(tanggal_lahir);
         this.tanggal_lahir = tanggal_lahir;
     }
 

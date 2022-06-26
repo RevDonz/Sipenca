@@ -5,26 +5,22 @@
  */
 package View;
 
-import Database.Database;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
+import Controller.ControllerLogin;
+import javax.swing.JTextField;
 
 /**
  *
  * @author Sabre
  */
-public class LoginView extends javax.swing.JFrame {
+public class ViewLogin extends javax.swing.JFrame {
 
+    ControllerLogin cl;
     /**
      * Creates new form Login
      */
-    public LoginView() {
+    public ViewLogin() {
         initComponents();
+        cl = new ControllerLogin(this);
     }
 
     /**
@@ -37,9 +33,9 @@ public class LoginView extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        UsernameField = new javax.swing.JTextField();
+        inputUsername = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        PasswordField = new javax.swing.JTextField();
+        inputPassword = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -48,9 +44,9 @@ public class LoginView extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Username : ");
 
-        UsernameField.addActionListener(new java.awt.event.ActionListener() {
+        inputUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsernameFieldActionPerformed(evt);
+                inputUsernameActionPerformed(evt);
             }
         });
 
@@ -77,8 +73,8 @@ public class LoginView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(UsernameField)
-                        .addComponent(PasswordField, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE))
+                        .addComponent(inputUsername)
+                        .addComponent(inputPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE))
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43))
         );
@@ -87,12 +83,12 @@ public class LoginView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(72, 72, 72)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(UsernameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(53, 53, 53)
                 .addComponent(jButton1)
                 .addContainerGap(86, Short.MAX_VALUE))
@@ -103,73 +99,12 @@ public class LoginView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Connection connection = null;
-        Statement statement = null;
-        ResultSet resultset = null;
-        
-        List<String> usernames = new ArrayList<>();
-        List<String> passwords = new ArrayList<>();
-        List<Integer> roles = new ArrayList<>();
-        List<Integer> id_users = new ArrayList<>();
-        
-        try {
-//            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_sipenca", "root", "");
-//            statement = connection.createStatement();
-//            resultset = statement.executeQuery("SELECT * FROM tb_user");
-            Database db = new Database();
-            String sql = "SELECT * FROM tb_user";
-            resultset = db.getData(sql);
-            while (resultset.next()){
-                usernames.add(resultset.getString("username"));
-                passwords.add(resultset.getString("password"));
-                roles.add(resultset.getInt("role"));
-                id_users.add(resultset.getInt("id_user"));
-            }
-        } catch (SQLException ex) {
-            System.out.println("SQL Error");
-            ex.printStackTrace();
-        } finally {
-            try {
-                if (connection != null) {
-                connection.close();
-                }
-            } catch (SQLException ex) {
-                System.out.println("SQL Error");
-                ex.printStackTrace();
-            }
-        }
-        String username = UsernameField.getText();
-        String password = PasswordField.getText();
-        
-        int uindex = usernames.indexOf(username);
-        
-        
-        if (passwords.get(uindex).equals(password)) {
-            DashboardView dashboard = new DashboardView(id_users.get(uindex));
-            
-            if (roles.get(uindex) == 1) {
-                /*
-                    Frame admin login buka di sini
-                */
-                
-            }
-            else if (roles.get(uindex) == 2) {
-                /*
-                    Frame warga login buka di sini
-                */
-                dashboard.setVisible(true);
-                this.dispose();
-            } else {
-                /*
-                    Frame pengelola login buka di sini
-                */
-            }
-        }
+        cl.UserLogin();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void UsernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameFieldActionPerformed
+    private void inputUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputUsernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_UsernameFieldActionPerformed
+    }//GEN-LAST:event_inputUsernameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -188,30 +123,47 @@ public class LoginView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoginView().setVisible(true);
+                new ViewLogin().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField PasswordField;
-    private javax.swing.JTextField UsernameField;
+    private javax.swing.JTextField inputPassword;
+    private javax.swing.JTextField inputUsername;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
+    public String getInputUsername() {
+        return inputUsername.getText();
+    }
+    
+    public void setInputUsername(JTextField inputUsername) {
+        this.inputUsername = inputUsername;
+    }
+    
+    public String getInputPassword() {
+        return inputPassword.getText();
+    }
+    
+    public void setInputPassword(JTextField inputPassword) {
+        this.inputPassword = inputPassword;
+    }
 }

@@ -27,8 +27,9 @@ public class ViewDashboard extends javax.swing.JFrame {
         this.id_user = id;
         initComponents();
         cp = new ControllerPengungsian(this);
-        cp.isiTabel();
         ck = new ControllerKebutuhan(this);
+        
+        cp.isiTabel();
         ck.isiTabel();
     }
 

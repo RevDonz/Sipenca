@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author Sabre
  */
-public class Pengungsian extends Base{
+public class Pengungsian {
     private int id_pengungsian;
     private int alamat;
     private String nama_tempat;
@@ -55,21 +55,5 @@ public class Pengungsian extends Base{
     public void setKapasitas_tempat(int kapasitas_tempat) {
         this.kapasitas_tempat = kapasitas_tempat;
     }
-    
-    @Override
-    void addData() {
-
-    }
-
-    @Override
-    void updateData() {
-
-    }
-
-    @Override
-    void deleteData() {
-
-    }
-    
     
 }

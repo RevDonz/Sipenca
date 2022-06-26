@@ -21,17 +21,18 @@ import java.util.Date;
 public class AlamatDAO {
     Connection conn;
     final String select = "SELECT * FROM tb_alamat WHERE id_alamat=?";
+    int idAlamat;
     
-    public AlamatDAO() {
+    public AlamatDAO(int id) {
         conn = Database.connect();
-        getAlamatById();
+        getAlamatById(id);
     }
     
-    public Alamat getAlamatById() {
+    public Alamat getAlamatById(int idAlamat) {
         Alamat alamat = null;
         try {
             PreparedStatement s = conn.prepareStatement(select);
-            s.setInt(1, 2);
+            s.setInt(1, idAlamat);
             ResultSet resultset = s.executeQuery();
             while (resultset.next()){
                 int id_alamat = resultset.getInt("id_alamat");

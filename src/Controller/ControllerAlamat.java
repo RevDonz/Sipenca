@@ -17,24 +17,11 @@ import View.ViewProfile;
  */
 public class ControllerAlamat {
     ViewProfile frame;
-    ProfilDAO pd;
     AlamatDAO ad;
     
     public ControllerAlamat(ViewProfile frame) {
         this.frame = frame;
-        pd = new ProfilDAO();
-        ad = new AlamatDAO();
+        
     }
     
-    public void isiForm() {
-        Alamat alamat = ad.getAlamatById();
-        
-        frame.getInputProvinsi().setText(alamat.getProvinsi());
-        frame.getInputKabKot().setText(alamat.getKab_kot());
-        frame.getInputNoRumah().setText(String.valueOf(alamat.getNomorRumah()));
-        frame.getInputKecamatan().setText(alamat.getKecamatan());
-        frame.getInputKelurahan().setText(alamat.getKelurahan());
-        frame.getInputRT().setText(String.valueOf(alamat.getRt()));
-        frame.getInputRW().setText(String.valueOf(alamat.getRw()));
-    }
 }

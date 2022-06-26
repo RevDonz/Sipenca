@@ -21,16 +21,16 @@ public class ProfilDAO {
     Connection conn;
     final String select = "SELECT * FROM tb_profil WHERE id_profil=?";
     
-    public ProfilDAO() {
+    public ProfilDAO(int id) {
         conn = Database.connect();
-        getProfil();
+        getProfil(id);
     }
     
-    public Profile getProfil() {
+    public Profile getProfil(int id_user) {
         Profile profil = null;
         try {
             PreparedStatement s = conn.prepareStatement(select);
-            s.setInt(1, 2);
+            s.setInt(1, id_user);
             ResultSet resultset = s.executeQuery();
             while (resultset.next()){
                 int id = resultset.getInt("id_profil");

@@ -24,12 +24,6 @@ public class ControllerKebutuhan {
     public ControllerKebutuhan(ViewDashboard frame) {
         this.frame = frame;
         kd = new KebutuhanDAO();
-        arrKebutuhan = kd.getAllKebutuhan();
-        for (Kebutuhan kebutuhan : arrKebutuhan) {
-            System.out.println(kebutuhan.getId_kebutuhan());
-            System.out.println(kebutuhan.getNama_barang());
-            System.out.println(kebutuhan.isPokok());
-        }
     }
     
     public void isiTabel() {

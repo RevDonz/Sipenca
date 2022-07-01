@@ -36,10 +36,11 @@ public class PengungsianDAO {
             
             while(rs.next()) {
                 int id = rs.getInt(1);
-                int alamat = rs.getInt(2);
+                String alamat = rs.getString(2);
                 String namaTempat = rs.getString(3);
                 int kapasitas = rs.getInt(4);
-                b = new Pengungsian(id, alamat, namaTempat, kapasitas);
+                int tersisa = rs.getInt(5);
+                b = new Pengungsian(id, alamat, namaTempat, kapasitas, tersisa);
                 arrPengungsian.add(b);
             }
             

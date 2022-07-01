@@ -13,15 +13,17 @@ import java.util.Date;
  */
 public class Pengungsian {
     private int id_pengungsian;
-    private int alamat;
+    private String alamat;
     private String nama_tempat;
     private int kapasitas_tempat;
+    private int kapasitas_tersisa;
 
-    public Pengungsian(int id_pengungsian, int alamat, String nama_tempat, int kapasitas_tempat) {
+    public Pengungsian(int id_pengungsian, String alamat, String nama_tempat, int kapasitas_tempat, int kapasitas_tersisa) {
         this.id_pengungsian = id_pengungsian;
         this.alamat = alamat;
         this.nama_tempat = nama_tempat;
         this.kapasitas_tempat = kapasitas_tempat;
+        this.kapasitas_tersisa = kapasitas_tersisa;
     }
 
     public int getId_pengungsian() {
@@ -32,11 +34,11 @@ public class Pengungsian {
         this.id_pengungsian = id_pengungsian;
     }
 
-    public int getAlamat() {
+    public String getAlamat() {
         return alamat;
     }
 
-    public void setAlamat(int alamat) {
+    public void setAlamat(String alamat) {
         this.alamat = alamat;
     }
 
@@ -56,4 +58,11 @@ public class Pengungsian {
         this.kapasitas_tempat = kapasitas_tempat;
     }
     
+    public int getKapasitas_tersisa() {
+        return kapasitas_tersisa;
+    }
+
+    public void setKapasitas_tersisa(int kapasitas_tersisa) {
+        this.kapasitas_tersisa = kapasitas_tersisa;
+    }
 }

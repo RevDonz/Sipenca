@@ -61,21 +61,18 @@ public class ViewProfile extends javax.swing.JFrame {
         inputNoRumah = new javax.swing.JTextField();
         btnUpdate = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
-        panelTambahAnggota = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        inputNamaAnggotaKeluarga = new javax.swing.JTextField();
-        inputAlamatAnggotKeluarga = new javax.swing.JTextField();
-        inputTglLahirAnggotaKeluarga = new javax.swing.JTextField();
-        inputKotaLahirAnggotaKeluarga = new javax.swing.JTextField();
         panelAnggotaKeluarga = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        inputTglLahirAnggotaKeluarga = new javax.swing.JTextField();
+        inputKotaLahirAnggotaKeluarga = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        inputNamaAnggotaKeluarga = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -168,7 +165,7 @@ public class ViewProfile extends javax.swing.JFrame {
                         .addComponent(btnBack)
                         .addGap(18, 18, 18)
                         .addComponent(btnUpdate)))
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         panelProfileLayout.setVerticalGroup(
             panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,72 +213,25 @@ public class ViewProfile extends javax.swing.JFrame {
 
         tabbedPaneProfile.addTab("Profile", panelProfile);
 
-        jLabel10.setText("Nama:");
-
-        jLabel11.setText("Alamat:");
-
-        jLabel12.setText("Tanggal Lahir:");
-
-        jLabel13.setText("Kota Lahir:");
-
-        inputNamaAnggotaKeluarga.setText("jTextField1");
-
-        inputAlamatAnggotKeluarga.setText("jTextField2");
-
-        inputTglLahirAnggotaKeluarga.setText("jTextField3");
-
-        inputKotaLahirAnggotaKeluarga.setText("jTextField4");
-
-        javax.swing.GroupLayout panelTambahAnggotaLayout = new javax.swing.GroupLayout(panelTambahAnggota);
-        panelTambahAnggota.setLayout(panelTambahAnggotaLayout);
-        panelTambahAnggotaLayout.setHorizontalGroup(
-            panelTambahAnggotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelTambahAnggotaLayout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addGroup(panelTambahAnggotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                .addGroup(panelTambahAnggotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(inputNamaAnggotaKeluarga, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
-                    .addComponent(inputAlamatAnggotKeluarga)
-                    .addComponent(inputTglLahirAnggotaKeluarga)
-                    .addComponent(inputKotaLahirAnggotaKeluarga))
-                .addGap(87, 87, 87))
-        );
-        panelTambahAnggotaLayout.setVerticalGroup(
-            panelTambahAnggotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelTambahAnggotaLayout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addGroup(panelTambahAnggotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(inputNamaAnggotaKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelTambahAnggotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(inputAlamatAnggotKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelTambahAnggotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(inputTglLahirAnggotaKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelTambahAnggotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(inputKotaLahirAnggotaKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(189, Short.MAX_VALUE))
-        );
-
-        tabbedPaneProfile.addTab("Tambah Anggota", panelTambahAnggota);
-
         jLabel2.setText("id Keluarga:");
 
         jScrollPane1.setViewportView(jList1);
 
         jLabel3.setText("Anggota keluarga:");
 
-        jLabel4.setText(".....");
+        jLabel4.setText("id_keluarga");
+
+        inputTglLahirAnggotaKeluarga.setText("jTextField3");
+
+        inputKotaLahirAnggotaKeluarga.setText("jTextField4");
+
+        jLabel10.setText("Nama:");
+
+        jLabel12.setText("Tanggal Lahir:");
+
+        jLabel13.setText("Kota Lahir:");
+
+        inputNamaAnggotaKeluarga.setText("jTextField1");
 
         javax.swing.GroupLayout panelAnggotaKeluargaLayout = new javax.swing.GroupLayout(panelAnggotaKeluarga);
         panelAnggotaKeluarga.setLayout(panelAnggotaKeluargaLayout);
@@ -290,26 +240,52 @@ public class ViewProfile extends javax.swing.JFrame {
             .addGroup(panelAnggotaKeluargaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelAnggotaKeluargaLayout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel4))
-                    .addComponent(jLabel3))
-                .addContainerGap(451, Short.MAX_VALUE))
+                    .addComponent(jLabel3)
+                    .addGroup(panelAnggotaKeluargaLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addGroup(panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel13))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                        .addGroup(panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(inputNamaAnggotaKeluarga, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
+                            .addComponent(inputTglLahirAnggotaKeluarga)
+                            .addComponent(inputKotaLahirAnggotaKeluarga))))
+                .addGap(42, 42, 42))
         );
         panelAnggotaKeluargaLayout.setVerticalGroup(
             panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelAnggotaKeluargaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addGap(5, 5, 5)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addGroup(panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelAnggotaKeluargaLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4))
+                        .addGap(17, 17, 17)
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelAnggotaKeluargaLayout.createSequentialGroup()
+                        .addGap(81, 81, 81)
+                        .addGroup(panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(inputNamaAnggotaKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(23, 23, 23)
+                        .addGroup(panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(inputTglLahirAnggotaKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)
+                        .addGroup(panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(inputKotaLahirAnggotaKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         tabbedPaneProfile.addTab("Anggota Keluarga", panelAnggotaKeluarga);
@@ -341,16 +317,16 @@ public class ViewProfile extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-        // TODO add your handling code here:
-        cf.updateProfil();
-    }//GEN-LAST:event_btnUpdateActionPerformed
-
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         this.dispose();
         new ViewDashboard(id_user).setVisible(true);
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // TODO add your handling code here:
+        cf.updateProfil();
+    }//GEN-LAST:event_btnUpdateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -391,7 +367,6 @@ public class ViewProfile extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnUpdate;
-    private javax.swing.JTextField inputAlamatAnggotKeluarga;
     private javax.swing.JTextField inputKabKot;
     private javax.swing.JTextField inputKecamatan;
     private javax.swing.JTextField inputKelurahan;
@@ -406,7 +381,6 @@ public class ViewProfile extends javax.swing.JFrame {
     private javax.swing.JTextField inputTglLahirAnggotaKeluarga;
     private javax.swing.JTextField inputTtlProfil;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
@@ -426,7 +400,6 @@ public class ViewProfile extends javax.swing.JFrame {
     private javax.swing.JLabel labelTgl;
     private javax.swing.JPanel panelAnggotaKeluarga;
     private javax.swing.JPanel panelProfile;
-    private javax.swing.JPanel panelTambahAnggota;
     private javax.swing.JTabbedPane tabbedPaneProfile;
     // End of variables declaration//GEN-END:variables
     

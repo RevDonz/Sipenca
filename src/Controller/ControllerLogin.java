@@ -34,7 +34,7 @@ public class ControllerLogin {
         
         if(role != 0) {
             frame.dispose();
-            new ViewDashboard(id_profil).setVisible(true);
+            new ViewDashboard(id_profil, id_user).setVisible(true);
         } else {
             JOptionPane.showMessageDialog(null, "Password salah");
         }

@@ -19,14 +19,16 @@ import javax.swing.JTextField;
  */
 public class ViewDashboard extends javax.swing.JFrame {
     private int id_user;
+    private int user;
     ControllerPengungsian cp;
     ControllerKebutuhan ck;
     
     /**
      * Creates new form Dashboard
      */
-    public ViewDashboard(int id) {
+    public ViewDashboard(int id, int user) {
         this.id_user = id;
+        this.user = user;
         
         initComponents();
         cp = new ControllerPengungsian(this);
@@ -617,7 +619,7 @@ public class ViewDashboard extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new ViewProfile(id_user).setVisible(true);
+        new ViewProfile(id_user, user).setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void inputNamaTempatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNamaTempatActionPerformed

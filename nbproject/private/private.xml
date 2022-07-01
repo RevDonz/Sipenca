@@ -2,6 +2,16 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/tugas_pbo/Sipenca/src/Controller/ControllerRegister.java</file>
+            <file>file:/D:/tugas_pbo/Sipenca/src/TubesPBO/MainDriver.java</file>
+            <file>file:/D:/tugas_pbo/Sipenca/src/Controller/ControllerLogin.java</file>
+            <file>file:/D:/tugas_pbo/Sipenca/src/View/ViewLogin.java</file>
+            <file>file:/D:/tugas_pbo/Sipenca/src/View/RegisterView.java</file>
+            <file>file:/D:/tugas_pbo/Sipenca/src/DAO/PengungsianDAO.java</file>
+            <file>file:/D:/tugas_pbo/Sipenca/src/Controller/ControllerPengungsian.java</file>
+            <file>file:/D:/tugas_pbo/Sipenca/src/DAO/RegisterDAO.java</file>
+            <file>file:/D:/tugas_pbo/Sipenca/src/View/ViewDashboard.java</file>
+        </group>
     </open-files>
 </project-private>

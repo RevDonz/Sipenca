@@ -180,6 +180,11 @@ public class ViewDashboard extends javax.swing.JFrame {
         });
 
         btnTambahDataPengungsian.setText("Tambah");
+        btnTambahDataPengungsian.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTambahDataPengungsianActionPerformed(evt);
+            }
+        });
 
         btnUbahDataPengungsian.setText("Ubah");
 
@@ -644,6 +649,11 @@ public class ViewDashboard extends javax.swing.JFrame {
         ck.isiTextField(tableDaftarKebutuhan.getSelectedRow());
     }//GEN-LAST:event_tableDaftarKebutuhanMouseClicked
 
+
+    private void btnTambahDataPengungsianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahDataPengungsianActionPerformed
+        
+    }//GEN-LAST:event_btnTambahDataPengungsianActionPerformed
+
     private void btnTambahDataKebutuhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahDataKebutuhanActionPerformed
         // TODO add your handling code here:
         ck.insertKebutuhan();
@@ -658,6 +668,7 @@ public class ViewDashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         ck.updateKebutuhan();
     }//GEN-LAST:event_btnUbahDataKebutuhanActionPerformed
+
 
 
     /**

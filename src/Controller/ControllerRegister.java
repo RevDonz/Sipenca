@@ -3,6 +3,7 @@ package Controller;
 import DAO.RegisterDAO;
 import View.RegisterView;
 import View.ViewLogin;
+import java.text.ParseException;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
 
@@ -15,7 +16,7 @@ public class ControllerRegister {
         rd = new RegisterDAO();
     }
 
-    public void UserRegister() {
+    public void UserRegister() throws ParseException {
         int role = 0;
         
         String username = frame.getInputUsername().getText();

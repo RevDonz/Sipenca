@@ -21,6 +21,7 @@ import java.util.Date;
 public class AlamatDAO {
     Connection conn;
     final String select = "SELECT * FROM tb_alamat WHERE id_alamat=?";
+    final String update = "UPDATE tb_alamat SET provinsi = ?, kab_kota = ?, kecamatan = ?, kelurahan = ?, rt = ?, rw = ?, nomorRumah = ? WHERE id_alamat = ?";
     int idAlamat;
     
     public AlamatDAO(int id) {
@@ -49,5 +50,25 @@ public class AlamatDAO {
             System.out.println(ex);
         }
         return alamat;
+    }
+    
+    public boolean updateAlamat(Alamat data) {
+        boolean status = false;
+        try {
+            PreparedStatement s = conn.prepareStatement(update);
+            s.setString(1, data.getProvinsi());
+            s.setString(2, data.getKab_kot());
+            s.setString(3, data.getKecamatan());
+            s.setString(4, data.getKelurahan());
+            s.setInt(5, data.getRt());
+            s.setInt(6, data.getRw());
+            s.setInt(7, data.getNomorRumah());
+            s.setInt(8, data.getId_alamat());
+            s.executeUpdate();
+            status = true;
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        return status;
     }
 }

@@ -8,10 +8,11 @@ package DAO;
 import Database.Database;
 import Model.Profile;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  *
@@ -20,7 +21,7 @@ import java.util.Date;
 public class ProfilDAO {
     Connection conn;
     final String select = "SELECT * FROM tb_profil WHERE id_profil=?";
-    
+    final String update = "UPDATE tb_profil SET nama_lengkap = ?, kota_lahir = ?, tanggal_lahir = ? WHERE id_profil = ?";
     public ProfilDAO(int id) {
         conn = Database.connect();
         getProfil(id);
@@ -37,12 +38,28 @@ public class ProfilDAO {
                 int alamatUser = resultset.getInt("alamat_user");
                 String namaLengkap = resultset.getString("nama_lengkap");
                 String kotaLahir = resultset.getString("kota_lahir");
-                Date tanggalLahir = resultset.getDate("tanggal_lahir");
+                LocalDate tanggalLahir = resultset.getDate("tanggal_lahir").toLocalDate();
                 profil = new Profile(id, alamatUser, namaLengkap, kotaLahir, tanggalLahir);
             }
         } catch (SQLException ex) {
             System.out.println(ex);
         }
         return profil;
+    }
+    
+    public boolean updateProfil(Profile data) {
+        boolean status = false;
+        try {
+            PreparedStatement s = conn.prepareStatement(update);
+            s.setString(1, data.getNama_lengkap());
+            s.setString(2, data.getKota_lahir());
+            s.setDate(3, Date.valueOf(data.getTanggal_lahir()));
+            s.setInt(4, data.getId_profil());
+            s.executeUpdate();
+            status = true;
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        return status;
     }
 }

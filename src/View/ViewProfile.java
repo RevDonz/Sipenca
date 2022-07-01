@@ -5,7 +5,10 @@
  */
 package View;
 
+import Controller.ControllerKeluarga;
 import Controller.ControllerProfil;
+import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JTextField;
 
 /**
@@ -15,6 +18,7 @@ import javax.swing.JTextField;
 public class ViewProfile extends javax.swing.JFrame {
     private int id_user;
     ControllerProfil cf;
+    ControllerKeluarga ck;
     
     /**
      * Creates new form Profile
@@ -24,9 +28,12 @@ public class ViewProfile extends javax.swing.JFrame {
         this.id_user = id;
         initComponents();
         cf = new ControllerProfil(this, id);
+        ck = new ControllerKeluarga(this, id);
         
         cf.isiForm();
         cf.isiFormAlamat();
+        ck.isiKeluarga();
+        ck.isiAnggota();
     }
     
     /**
@@ -65,9 +72,9 @@ public class ViewProfile extends javax.swing.JFrame {
         panelAnggotaKeluarga = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        listAnggotaKeluarga = new javax.swing.JList<>();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        labelIdKeluarga = new javax.swing.JLabel();
         inputTglLahirAnggotaKeluarga = new javax.swing.JTextField();
         inputKotaLahirAnggotaKeluarga = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
@@ -166,7 +173,7 @@ public class ViewProfile extends javax.swing.JFrame {
                         .addComponent(btnBack)
                         .addGap(18, 18, 18)
                         .addComponent(btnUpdate)))
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
         panelProfileLayout.setVerticalGroup(
             panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,15 +223,11 @@ public class ViewProfile extends javax.swing.JFrame {
 
         jLabel2.setText("id Keluarga:");
 
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(listAnggotaKeluarga);
 
         jLabel3.setText("Anggota keluarga:");
 
-        jLabel4.setText("id_keluarga");
-
-        inputTglLahirAnggotaKeluarga.setText("jTextField3");
-
-        inputKotaLahirAnggotaKeluarga.setText("jTextField4");
+        labelIdKeluarga.setText("id_keluarga");
 
         jLabel10.setText("Nama:");
 
@@ -232,49 +235,48 @@ public class ViewProfile extends javax.swing.JFrame {
 
         jLabel13.setText("Kota Lahir:");
 
-        inputNamaAnggotaKeluarga.setText("jTextField1");
-
         javax.swing.GroupLayout panelAnggotaKeluargaLayout = new javax.swing.GroupLayout(panelAnggotaKeluarga);
         panelAnggotaKeluarga.setLayout(panelAnggotaKeluargaLayout);
         panelAnggotaKeluargaLayout.setHorizontalGroup(
             panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelAnggotaKeluargaLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(15, 15, 15)
                 .addGroup(panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelAnggotaKeluargaLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel4))
-                    .addComponent(jLabel3)
-                    .addGroup(panelAnggotaKeluargaLayout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
+                        .addGap(29, 29, 29)
                         .addGroup(panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel10)
                             .addComponent(jLabel12)
                             .addComponent(jLabel13))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                         .addGroup(panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(inputNamaAnggotaKeluarga, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
+                            .addComponent(inputNamaAnggotaKeluarga)
                             .addComponent(inputTglLahirAnggotaKeluarga)
-                            .addComponent(inputKotaLahirAnggotaKeluarga))))
-                .addGap(42, 42, 42))
+                            .addComponent(inputKotaLahirAnggotaKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(panelAnggotaKeluargaLayout.createSequentialGroup()
+                        .addGroup(panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addGroup(panelAnggotaKeluargaLayout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(labelIdKeluarga)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(44, 44, 44))
         );
         panelAnggotaKeluargaLayout.setVerticalGroup(
             panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelAnggotaKeluargaLayout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addGroup(panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(labelIdKeluarga))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addGap(28, 28, 28)
                 .addGroup(panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelAnggotaKeluargaLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4))
-                        .addGap(17, 17, 17)
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelAnggotaKeluargaLayout.createSequentialGroup()
-                        .addGap(81, 81, 81)
                         .addGroup(panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
                             .addComponent(inputNamaAnggotaKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -286,7 +288,7 @@ public class ViewProfile extends javax.swing.JFrame {
                         .addGroup(panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel13)
                             .addComponent(inputKotaLahirAnggotaKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addGap(27, 27, 27))
         );
 
         tabbedPaneProfile.addTab("Anggota Keluarga", panelAnggotaKeluarga);
@@ -295,10 +297,7 @@ public class ViewProfile extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(tabbedPaneProfile)
-                .addContainerGap())
+            .addComponent(tabbedPaneProfile, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -386,12 +385,11 @@ public class ViewProfile extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelAlamat4;
     private javax.swing.JLabel labelAlamat5;
     private javax.swing.JLabel labelAlamat6;
+    private javax.swing.JLabel labelIdKeluarga;
     private javax.swing.JLabel labelKabKot;
     private javax.swing.JLabel labelKecamatan;
     private javax.swing.JLabel labelKelurahan;
@@ -399,6 +397,7 @@ public class ViewProfile extends javax.swing.JFrame {
     private javax.swing.JLabel labelNama;
     private javax.swing.JLabel labelProv;
     private javax.swing.JLabel labelTgl;
+    private javax.swing.JList<String> listAnggotaKeluarga;
     private javax.swing.JPanel panelAnggotaKeluarga;
     private javax.swing.JPanel panelProfile;
     private javax.swing.JTabbedPane tabbedPaneProfile;
@@ -484,4 +483,39 @@ public class ViewProfile extends javax.swing.JFrame {
         this.inputNoRumah = inputNoRumah;
     }
     
+    public JLabel getLabelIdKeluarga() {
+        return labelIdKeluarga;
+    }
+    
+    public JTextField getInputNamaAnggota() {
+        return inputNamaAnggotaKeluarga;
+    }
+    
+    public void setInputNamaAnggota(JTextField inputNamaAnggotaKeluarga) {
+        this.inputNamaAnggotaKeluarga = inputNamaAnggotaKeluarga;
+    }
+    
+    public JTextField getInputTglAnggota() {
+        return inputTglLahirAnggotaKeluarga;
+    }
+    
+    public void setInputTglAnggota(JTextField inputTglLahirAnggotaKeluarga) {
+        this.inputTglLahirAnggotaKeluarga = inputTglLahirAnggotaKeluarga;
+    }
+            
+    public JTextField getInputKotaAnggota() {
+        return inputKotaLahirAnggotaKeluarga;
+    }
+    
+    public void setInputKotaAnggota(JTextField inputKotaLahirAnggotaKeluarga) {
+        this.inputKotaLahirAnggotaKeluarga = inputKotaLahirAnggotaKeluarga;
+    }
+    
+    public JList getListAnggota() {
+        return listAnggotaKeluarga;
+    }
+    
+    public void setListAnggota(JList listAnggotaKeluarga) {
+        this.listAnggotaKeluarga = listAnggotaKeluarga;
+    }
 }

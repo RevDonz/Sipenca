@@ -22,6 +22,7 @@ public class ProfilDAO {
     Connection conn;
     final String select = "SELECT * FROM tb_profil WHERE id_profil=?";
     final String update = "UPDATE tb_profil SET nama_lengkap = ?, kota_lahir = ?, tanggal_lahir = ? WHERE id_profil = ?";
+    
     public ProfilDAO(int id) {
         conn = Database.connect();
         getProfil(id);

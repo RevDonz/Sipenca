@@ -16,7 +16,7 @@ public class Anggota {
     private int keluarga;
     private int profil;
 
-    public Anggota(int id_anggota, int kepala, int profil) {
+    public Anggota(int id_anggota, int keluarga, int profil) {
         this.id_anggota = id_anggota;
         this.keluarga = keluarga;
         this.profil = profil;
@@ -42,7 +42,7 @@ public class Anggota {
         return keluarga;
     }
 
-    public void setKeluarga(int kepala) {
+    public void setKeluarga(int keluarga) {
         this.keluarga = keluarga;
     }
 }

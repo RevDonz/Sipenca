@@ -21,7 +21,7 @@ import java.time.LocalDate;
 public class ProfilDAO {
     Connection conn;
     final String select = "SELECT * FROM tb_profil WHERE id_profil=?";
-    final String insert = "INSERT INTO tb_profil(id_profil, alamat_user, nama_lengkap, kota_lahir, tanggal_lahir) VALUES(null, ?, ?, ?, ?)";
+    final String insert = "INSERT INTO tb_profil(alamat_user, nama_lengkap, kota_lahir, tanggal_lahir) VALUES(?, ?, ?, ?)";
     final String update = "UPDATE tb_profil SET nama_lengkap = ?, kota_lahir = ?, tanggal_lahir = ? WHERE id_profil = ?";
     
     public ProfilDAO(int id) {
@@ -69,10 +69,10 @@ public class ProfilDAO {
         boolean status = false;
         try {
             PreparedStatement s = conn.prepareStatement(insert);
-            s.setString(1, data.getNama_lengkap());
-            s.setString(2, data.getKota_lahir());
-            s.setDate(3, Date.valueOf(data.getTanggal_lahir()));
-            s.setInt(4, data.getId_profil());
+            s.setInt(1, data.getAlamat_user());
+            s.setString(2, data.getNama_lengkap());
+            s.setString(3, data.getKota_lahir());
+            s.setDate(4, Date.valueOf(data.getTanggal_lahir()));
             s.executeUpdate();
             status = true;
         } catch (SQLException ex) {

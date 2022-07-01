@@ -8,7 +8,6 @@ package DAO;
 import Database.Database;
 import java.sql.Connection;
 import Model.Anggota;
-import Model.Kebutuhan;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,7 +21,8 @@ import java.util.ArrayList;
 public class AnggotaDAO {
     Connection conn;
     final String select = "SELECT * FROM tb_anggota WHERE keluarga = ?";
-    final String insert = "INSERT INTO tb_anggota(id_anggota, keluarga, profil) VALUES(null, ?, ?)";
+    final String insert = "INSERT INTO tb_anggota(keluarga, profil) VALUES(?, ?)";
+    final String max_profil = "SELECT MAX(id_profil) AS max_profil FROM tb_profil";
     
     public AnggotaDAO() {
         conn = Database.connect();
@@ -50,12 +50,20 @@ public class AnggotaDAO {
         return arrAnggota;
     }
     
-    public boolean addAnggotaKeluarga(Anggota data) {
+    public boolean addAnggotaKeluarga(Anggota data) throws SQLException {
+        Statement x = conn.createStatement();
+        ResultSet resultset = x.executeQuery(max_profil);
+        int profile_max = -1;
+        
+        while(resultset.next()) {
+            profile_max = resultset.getInt("max_profil");
+        }
+        
         boolean status = false;
         try {
             PreparedStatement s = conn.prepareStatement(insert);
             s.setInt(1, data.getKeluarga());
-            s.setInt(2, data.getProfil());
+            s.setInt(2, profile_max);
             s.executeUpdate();
             status = true;
         } catch(SQLException se) {

@@ -7,6 +7,9 @@ package View;
 
 import Controller.ControllerKeluarga;
 import Controller.ControllerProfil;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JTextField;
@@ -346,8 +349,12 @@ public class ViewProfile extends javax.swing.JFrame {
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnTambahAnggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahAnggotaActionPerformed
-        // TODO add your handling code here:
-        ck.addAnggota();
+        try {
+            // TODO add your handling code here:
+            ck.addAnggota();
+        } catch (SQLException ex) {
+            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnTambahAnggotaActionPerformed
 
     /**

@@ -37,7 +37,7 @@ public class ViewDashboard extends javax.swing.JFrame {
         labelKebutuhanId.setVisible(false);
         jTabbedPane_DataPengungsian.remove(jPanel3);
         jTabbedPane_DataPengungsian.remove(jPanel5);
-        if (id != 1) {
+        if (id == 1) {
             lblAlamat.setVisible(false);
             lblNamaTempat.setVisible(false);
             lblKapasitas.setVisible(false);
@@ -47,6 +47,21 @@ public class ViewDashboard extends javax.swing.JFrame {
             btnTambahDataPengungsian.setVisible(false);
             btnUbahDataPengungsian.setVisible(false);
             btnHapusDataPengungsian.setVisible(false);
+            inputTersisa.setVisible(false);
+            labelTersisa.setVisible(false);
+            lblKeluarga.setVisible(false);
+            lblNamaBarang.setVisible(false);
+            lblJumlahKebutuhan.setVisible(false);
+            lblSatuanKebutuhan.setVisible(false);
+            lblKebutuhanPokok.setVisible(false);
+            btnTambahDataKebutuhan.setVisible(false);
+            btnUbahDataKebutuhan.setVisible(false);
+            btnHapusDataKebutuhan.setVisible(false);
+            inputKeluarga.setVisible(false);
+            inputNamaBarang.setVisible(false);
+            inputSatuanKebutuhan.setVisible(false);
+            inputJumlahKebutuhan.setVisible(false);
+            checkKebutuhanPokok.setVisible(false);
         }
     }
 

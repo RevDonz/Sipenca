@@ -80,6 +80,7 @@ public class ViewProfile extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         inputNamaAnggotaKeluarga = new javax.swing.JTextField();
+        btnTambahAnggota = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -234,6 +235,13 @@ public class ViewProfile extends javax.swing.JFrame {
 
         jLabel13.setText("Kota Lahir:");
 
+        btnTambahAnggota.setText("Tambah");
+        btnTambahAnggota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTambahAnggotaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelAnggotaKeluargaLayout = new javax.swing.GroupLayout(panelAnggotaKeluarga);
         panelAnggotaKeluarga.setLayout(panelAnggotaKeluargaLayout);
         panelAnggotaKeluargaLayout.setHorizontalGroup(
@@ -243,16 +251,21 @@ public class ViewProfile extends javax.swing.JFrame {
                 .addGroup(panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelAnggotaKeluargaLayout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
                         .addGroup(panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel13))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                        .addGroup(panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(inputNamaAnggotaKeluarga)
-                            .addComponent(inputTglLahirAnggotaKeluarga)
-                            .addComponent(inputKotaLahirAnggotaKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(panelAnggotaKeluargaLayout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addGroup(panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel12)
+                                    .addComponent(jLabel13))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                                .addGroup(panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(inputNamaAnggotaKeluarga)
+                                    .addComponent(inputTglLahirAnggotaKeluarga)
+                                    .addComponent(inputKotaLahirAnggotaKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(panelAnggotaKeluargaLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnTambahAnggota))))
                     .addGroup(panelAnggotaKeluargaLayout.createSequentialGroup()
                         .addGroup(panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -286,7 +299,9 @@ public class ViewProfile extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addGroup(panelAnggotaKeluargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel13)
-                            .addComponent(inputKotaLahirAnggotaKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(inputKotaLahirAnggotaKeluarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32)
+                        .addComponent(btnTambahAnggota)))
                 .addGap(27, 27, 27))
         );
 
@@ -327,6 +342,11 @@ public class ViewProfile extends javax.swing.JFrame {
         cf.updateProfil();
     }//GEN-LAST:event_btnUpdateActionPerformed
 
+    private void btnTambahAnggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahAnggotaActionPerformed
+        // TODO add your handling code here:
+        ck.addAnggota();
+    }//GEN-LAST:event_btnTambahAnggotaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -365,6 +385,7 @@ public class ViewProfile extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnTambahAnggota;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JTextField inputKabKot;
     private javax.swing.JTextField inputKecamatan;

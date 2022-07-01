@@ -11,14 +11,14 @@ import java.util.Date;
  *
  * @author HP
  */
-public class Anggota extends Base {
+public class Anggota {
     private int id_anggota;
-    private int kepala;
+    private int keluarga;
     private int profil;
 
     public Anggota(int id_anggota, int kepala, int profil) {
         this.id_anggota = id_anggota;
-        this.kepala = kepala;
+        this.keluarga = keluarga;
         this.profil = profil;
     }
 
@@ -38,26 +38,11 @@ public class Anggota extends Base {
         this.id_anggota = id_anggota;
     }
 
-    public int getKepala() {
-        return kepala;
+    public int getKeluarga() {
+        return keluarga;
     }
 
-    public void setKepala(int kepala) {
-        this.kepala = kepala;
-    }
-
-    @Override
-    void addData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    void updateData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    void deleteData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setKeluarga(int kepala) {
+        this.keluarga = keluarga;
     }
 }

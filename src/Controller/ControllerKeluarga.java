@@ -13,8 +13,10 @@ import Model.Keluarga;
 import Model.Profile;
 import Model.Anggota;
 import View.ViewProfile;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -29,6 +31,7 @@ public class ControllerKeluarga {
     AnggotaDAO gd;
     Keluarga keluarga;
     Profile profil;
+    Anggota anggota;
     int id_user;
     ArrayList<Anggota> arrAnggota;
     
@@ -57,5 +60,26 @@ public class ControllerKeluarga {
             model.addElement(nama);
         }
         frame.getListAnggota().setModel(model);
+    }
+    
+    public void addAnggota() {
+        profil = pd.getProfil(id_user);
+        keluarga = kd.getKeluargaById(id_user);
+        
+        String nama = frame.getInputNamaProfil().getText();
+        String kota = frame.getInputKota().getText();
+        String tanggal = frame.getInputTtlProfil().getText();
+        LocalDate date = LocalDate.parse(tanggal);
+        Profile profilUpdate = new Profile(id_user, profil.getAlamat_user(), nama, kota, date);
+        
+        int id_keluarga = keluarga.getId_keluarga();
+        
+        Anggota newAnggota = new Anggota(id_keluarga, id_keluarga, id_user);
+        if (pd.updateProfil(profilUpdate)) {
+//            JOptionPane.showMessageDialog(null, "Ubah Profil berhasil");
+            
+        } else {
+            JOptionPane.showMessageDialog(null, "Ubah Profil gagal");
+        }
     }
 }

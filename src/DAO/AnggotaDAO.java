@@ -22,6 +22,7 @@ import java.util.ArrayList;
 public class AnggotaDAO {
     Connection conn;
     final String select = "SELECT * FROM tb_anggota WHERE keluarga = ?";
+    final String insert = "INSERT INTO tb_anggota(id_anggota, keluarga, profil) VALUES(null, ?, ?)";
     
     public AnggotaDAO() {
         conn = Database.connect();
@@ -33,8 +34,6 @@ public class AnggotaDAO {
             PreparedStatement s = conn.prepareStatement(select);
             s.setInt(1, id);
             ResultSet resultset = s.executeQuery();
-//            Statement s = conn.createStatement();
-//            ResultSet resultset = s.executeQuery(select);
             Anggota anggota;
             
             while (resultset.next()){
@@ -49,5 +48,19 @@ public class AnggotaDAO {
             return null;
         }
         return arrAnggota;
+    }
+    
+    public boolean addAnggotaKeluarga(Anggota data) {
+        boolean status = false;
+        try {
+            PreparedStatement s = conn.prepareStatement(insert);
+            s.setInt(1, data.getKeluarga());
+            s.setInt(2, data.getProfil());
+            s.executeUpdate();
+            status = true;
+        } catch(SQLException se) {
+            System.out.println(se);
+        }
+        return status;
     }
 }

@@ -30,10 +30,11 @@ public class ControllerLogin {
         int uindex = ld.usernames.indexOf(username);
         int role = ld.login(username, password);
         int id_user = ld.id_users.get(uindex);
+        int id_profil = ld.id_profil.get(uindex);
         
         if(role != 0) {
             frame.dispose();
-            new ViewDashboard(id_user).setVisible(true);
+            new ViewDashboard(id_profil).setVisible(true);
         } else {
             JOptionPane.showMessageDialog(null, "Password salah");
         }

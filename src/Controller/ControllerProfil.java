@@ -27,9 +27,10 @@ public class ControllerProfil {
     public ControllerProfil(ViewProfile frame, int id) {
         this.frame = frame;
         this.id_user = id;
-        pd = new ProfilDAO(id);
-        profil = pd.getProfil(id);
-        ad = new AlamatDAO(profil.getAlamat_user());
+        this.pd = new ProfilDAO(id);
+        this.profil = pd.getProfil(id);
+        System.out.println(id);
+        this.ad = new AlamatDAO(profil.getAlamat_user());
     }
     
     public void isiForm() {

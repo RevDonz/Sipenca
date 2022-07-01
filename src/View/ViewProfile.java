@@ -18,6 +18,7 @@ public class ViewProfile extends javax.swing.JFrame {
     
     /**
      * Creates new form Profile
+     * @param id
      */
     public ViewProfile(int id) {
         this.id_user = id;

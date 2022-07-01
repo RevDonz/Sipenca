@@ -24,6 +24,7 @@ public class LoginDAO {
     List<String> passwords = new ArrayList<>();
     public List<Integer> roles = new ArrayList<>();
     public List<Integer> id_users = new ArrayList<>();
+    public List<Integer> id_profil = new ArrayList<>();
     
     public LoginDAO() {
         conn = Database.connect();
@@ -39,6 +40,7 @@ public class LoginDAO {
                 passwords.add(resultset.getString("password"));
                 roles.add(resultset.getInt("role"));
                 id_users.add(resultset.getInt("id_user"));
+                id_profil.add(resultset.getInt("profil_user"));
             }
         } catch (SQLException ex) {
             System.out.println(ex);

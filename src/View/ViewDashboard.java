@@ -8,6 +8,7 @@ package View;
 import Controller.ControllerKebutuhan;
 import Controller.ControllerPengungsian;
 import javax.swing.JCheckBox;
+import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
@@ -25,12 +26,19 @@ public class ViewDashboard extends javax.swing.JFrame {
      */
     public ViewDashboard(int id) {
         this.id_user = id;
+        
         initComponents();
         cp = new ControllerPengungsian(this);
         ck = new ControllerKebutuhan(this);
         
         cp.isiTabel();
         ck.isiTabel();
+        labelKebutuhanId.setVisible(false);
+        if (id != 1) {
+//            jTabbedPane_DataPengungsian.remove(jPanel3);
+            lblAlamat.setVisible(false);
+            lblNamaTempat.setVisible(false);
+        }
     }
 
     /**
@@ -71,6 +79,7 @@ public class ViewDashboard extends javax.swing.JFrame {
         btnTambahDataKebutuhan = new javax.swing.JButton();
         btnUbahDataKebutuhan = new javax.swing.JButton();
         btnHapusDataKebutuhan = new javax.swing.JButton();
+        labelKebutuhanId = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tableDataObat = new javax.swing.JTable();
@@ -162,49 +171,53 @@ public class ViewDashboard extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(75, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblAlamat)
-                            .addComponent(lblNamaTempat)
-                            .addComponent(lblKapasitas))
-                        .addGap(41, 41, 41)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(inputNamaTempat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputAlamat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputKapasitas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(59, 59, 59)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 646, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(169, 169, 169)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblKapasitas)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(inputKapasitas, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblNamaTempat)
+                                    .addComponent(lblAlamat))
+                                .addGap(33, 33, 33)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(inputNamaTempat, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(inputAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(52, 52, 52)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnTambahDataPengungsian, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnUbahDataPengungsian, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnHapusDataPengungsian, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(140, 140, 140))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 646, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(49, 49, 49))))
+                            .addComponent(btnHapusDataPengungsian, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(84, 84, 84)
+                .addGap(44, 44, 44)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNamaTempat)
                     .addComponent(inputNamaTempat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnTambahDataPengungsian))
-                .addGap(9, 9, 9)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(inputAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAlamat)
+                    .addComponent(inputAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnUbahDataPengungsian))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblKapasitas)
                     .addComponent(inputKapasitas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnHapusDataPengungsian))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38))
+                    .addComponent(btnHapusDataPengungsian)
+                    .addComponent(lblKapasitas))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         jTabbedPane_DataPengungsian.addTab("Data Pengungsian", jPanel1);
@@ -243,10 +256,27 @@ public class ViewDashboard extends javax.swing.JFrame {
         lblKebutuhanPokok.setText("Kebutuhan Pokok");
 
         btnTambahDataKebutuhan.setText("Tambah");
+        btnTambahDataKebutuhan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTambahDataKebutuhanActionPerformed(evt);
+            }
+        });
 
         btnUbahDataKebutuhan.setText("Ubah");
+        btnUbahDataKebutuhan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUbahDataKebutuhanActionPerformed(evt);
+            }
+        });
 
         btnHapusDataKebutuhan.setText("Hapus");
+        btnHapusDataKebutuhan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHapusDataKebutuhanActionPerformed(evt);
+            }
+        });
+
+        labelKebutuhanId.setText("id_kebutuhan");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -259,12 +289,15 @@ public class ViewDashboard extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(82, 82, 82)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblKeluarga)
-                    .addComponent(lblNamaBarang))
-                .addGap(35, 35, 35)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(inputNamaBarang, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
-                    .addComponent(inputKeluarga))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblKeluarga)
+                            .addComponent(lblNamaBarang))
+                        .addGap(35, 35, 35)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(inputNamaBarang, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                            .addComponent(inputKeluarga)))
+                    .addComponent(labelKebutuhanId))
                 .addGap(40, 40, 40)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -307,7 +340,9 @@ public class ViewDashboard extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnHapusDataKebutuhan)
                     .addComponent(checkKebutuhanPokok)
-                    .addComponent(lblKebutuhanPokok))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblKebutuhanPokok)
+                        .addComponent(labelKebutuhanId)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43))
@@ -582,9 +617,26 @@ public class ViewDashboard extends javax.swing.JFrame {
         ck.isiTextField(tableDaftarKebutuhan.getSelectedRow());
     }//GEN-LAST:event_tableDaftarKebutuhanMouseClicked
 
+
     private void btnTambahDataPengungsianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahDataPengungsianActionPerformed
         
     }//GEN-LAST:event_btnTambahDataPengungsianActionPerformed
+
+    private void btnTambahDataKebutuhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahDataKebutuhanActionPerformed
+        // TODO add your handling code here:
+        ck.insertKebutuhan();
+    }//GEN-LAST:event_btnTambahDataKebutuhanActionPerformed
+
+    private void btnHapusDataKebutuhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusDataKebutuhanActionPerformed
+        // TODO add your handling code here:
+        ck.deleteKebutuhan();
+    }//GEN-LAST:event_btnHapusDataKebutuhanActionPerformed
+
+    private void btnUbahDataKebutuhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUbahDataKebutuhanActionPerformed
+        // TODO add your handling code here:
+        ck.updateKebutuhan();
+    }//GEN-LAST:event_btnUbahDataKebutuhanActionPerformed
+
 
 
     /**
@@ -665,6 +717,7 @@ public class ViewDashboard extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane_DataPengungsian;
+    private javax.swing.JLabel labelKebutuhanId;
     private javax.swing.JLabel lblAlamat;
     private javax.swing.JLabel lblIdObat;
     private javax.swing.JLabel lblIdPenyakit;
@@ -765,5 +818,9 @@ public class ViewDashboard extends javax.swing.JFrame {
     
     public void setTableKebutuhan(JTable tableDaftarKebutuhan) {
         this.tableDaftarKebutuhan = tableDaftarKebutuhan;
+    }
+    
+    public JLabel getLabelKebutuhanId() {
+        return labelKebutuhanId;
     }
 }

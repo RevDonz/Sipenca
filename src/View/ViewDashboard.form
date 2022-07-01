@@ -85,60 +85,67 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace pref="75" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblAlamat" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblNamaTempat" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblKapasitas" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                              <Component id="jScrollPane1" min="-2" pref="646" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="lblKapasitas" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="inputKapasitas" min="-2" pref="171" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblNamaTempat" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblAlamat" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="inputNamaTempat" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
+                                          <Component id="inputAlamat" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="inputNamaTempat" alignment="1" min="-2" pref="171" max="-2" attributes="0"/>
-                                  <Component id="inputAlamat" alignment="1" min="-2" pref="171" max="-2" attributes="0"/>
-                                  <Component id="inputKapasitas" alignment="1" min="-2" pref="171" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                              <EmptySpace min="52" pref="52" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="btnTambahDataPengungsian" max="32767" attributes="0"/>
                                   <Component id="btnUbahDataPengungsian" max="32767" attributes="0"/>
-                                  <Component id="btnHapusDataPengungsian" max="32767" attributes="0"/>
+                                  <Component id="btnHapusDataPengungsian" min="-2" pref="76" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="jScrollPane1" min="-2" pref="646" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace pref="63" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="180" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblNamaTempat" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="inputNamaTempat" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnTambahDataPengungsian" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="inputAlamat" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lblAlamat" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputAlamat" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnUbahDataPengungsian" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblKapasitas" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="inputKapasitas" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnHapusDataPengungsian" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblKapasitas" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="25" max="32767" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="180" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                      <EmptySpace pref="55" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -268,13 +275,18 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblKeluarga" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblNamaBarang" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="inputNamaBarang" pref="116" max="32767" attributes="0"/>
-                          <Component id="inputKeluarga" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblKeluarga" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblNamaBarang" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="inputNamaBarang" pref="116" max="32767" attributes="0"/>
+                                  <Component id="inputKeluarga" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="labelKebutuhanId" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
@@ -328,7 +340,10 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btnHapusDataKebutuhan" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="checkKebutuhanPokok" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblKebutuhanPokok" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="lblKebutuhanPokok" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelKebutuhanId" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace pref="40" max="32767" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="203" max="-2" attributes="0"/>
@@ -440,15 +455,29 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Tambah"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTambahDataKebutuhanActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnUbahDataKebutuhan">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ubah"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUbahDataKebutuhanActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnHapusDataKebutuhan">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Hapus"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHapusDataKebutuhanActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="labelKebutuhanId">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="id_kebutuhan"/>
               </Properties>
             </Component>
           </SubComponents>

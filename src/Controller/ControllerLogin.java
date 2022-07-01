@@ -8,6 +8,7 @@ package Controller;
 import DAO.LoginDAO;
 import View.ViewDashboard;
 import View.ViewLogin;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -33,6 +34,8 @@ public class ControllerLogin {
         if(role != 0) {
             frame.dispose();
             new ViewDashboard(id_user).setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(null, "Password salah");
         }
     }
 }

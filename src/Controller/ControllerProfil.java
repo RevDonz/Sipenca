@@ -10,6 +10,8 @@ import DAO.ProfilDAO;
 import Model.Alamat;
 import Model.Profile;
 import View.ViewProfile;
+import java.time.LocalDate;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -50,5 +52,30 @@ public class ControllerProfil {
         frame.getInputRW().setText(String.valueOf(alamat.getRw()));
     }
     
-    
+    public void updateProfil() {
+        Alamat alamat = ad.getAlamatById(profil.getAlamat_user());
+        
+        String nama = frame.getInputNamaProfil().getText();
+        String kota = frame.getInputKota().getText();
+        String tanggal = frame.getInputTtlProfil().getText();
+        LocalDate date = LocalDate.parse(tanggal);
+        Profile profilUpdate = new Profile(id_user, alamat.getId_alamat(), nama, kota, date);
+        
+        String provinsi = frame.getInputProvinsi().getText();
+        String kabKot = frame.getInputKabKot().getText();
+        String noRumah = frame.getInputNoRumah().getText();
+        String kec = frame.getInputKecamatan().getText();
+        String kel = frame.getInputKelurahan().getText();
+        String rt = frame.getInputRT().getText();
+        String rw = frame.getInputRW().getText();
+        Alamat alamatUpdate = new Alamat(alamat.getId_alamat(), provinsi, kabKot, kec, kel, Integer.parseInt(rt), Integer.parseInt(rw), Integer.parseInt(noRumah));
+        
+        if (pd.updateProfil(profilUpdate) && ad.updateAlamat(alamatUpdate)) {
+            JOptionPane.showMessageDialog(null, "Ubah Profil berhasil");
+            isiForm();
+        } else {
+            JOptionPane.showMessageDialog(null, "Ubah Profil gagal");
+        }
+        
+    }
 }

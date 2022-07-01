@@ -29,7 +29,6 @@ public class ControllerProfil {
         this.id_user = id;
         this.pd = new ProfilDAO(id);
         this.profil = pd.getProfil(id);
-        System.out.println(id);
         this.ad = new AlamatDAO(profil.getAlamat_user());
     }
     

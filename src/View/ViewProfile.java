@@ -17,6 +17,7 @@ import javax.swing.JTextField;
  */
 public class ViewProfile extends javax.swing.JFrame {
     private int id_user;
+    private int user;
     ControllerProfil cf;
     ControllerKeluarga ck;
     
@@ -24,11 +25,12 @@ public class ViewProfile extends javax.swing.JFrame {
      * Creates new form Profile
      * @param id
      */
-    public ViewProfile(int id) {
+    public ViewProfile(int id, int user) {
         this.id_user = id;
+        this.user = user;
         initComponents();
         cf = new ControllerProfil(this, id);
-        ck = new ControllerKeluarga(this, id);
+        ck = new ControllerKeluarga(this, user);
         
         cf.isiForm();
         cf.isiFormAlamat();
@@ -335,7 +337,7 @@ public class ViewProfile extends javax.swing.JFrame {
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new ViewDashboard(id_user).setVisible(true);
+        new ViewDashboard(id_user, user).setVisible(true);
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed

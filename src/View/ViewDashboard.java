@@ -8,6 +8,7 @@ package View;
 import Controller.ControllerKebutuhan;
 import Controller.ControllerPengungsian;
 import javax.swing.JCheckBox;
+import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
@@ -25,12 +26,14 @@ public class ViewDashboard extends javax.swing.JFrame {
      */
     public ViewDashboard(int id) {
         this.id_user = id;
+        
         initComponents();
         cp = new ControllerPengungsian(this);
         ck = new ControllerKebutuhan(this);
         
         cp.isiTabel();
         ck.isiTabel();
+        labelKebutuhanId.setVisible(false);
     }
 
     /**
@@ -71,6 +74,7 @@ public class ViewDashboard extends javax.swing.JFrame {
         btnTambahDataKebutuhan = new javax.swing.JButton();
         btnUbahDataKebutuhan = new javax.swing.JButton();
         btnHapusDataKebutuhan = new javax.swing.JButton();
+        labelKebutuhanId = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tableDataObat = new javax.swing.JTable();
@@ -238,10 +242,27 @@ public class ViewDashboard extends javax.swing.JFrame {
         lblKebutuhanPokok.setText("Kebutuhan Pokok");
 
         btnTambahDataKebutuhan.setText("Tambah");
+        btnTambahDataKebutuhan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTambahDataKebutuhanActionPerformed(evt);
+            }
+        });
 
         btnUbahDataKebutuhan.setText("Ubah");
+        btnUbahDataKebutuhan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUbahDataKebutuhanActionPerformed(evt);
+            }
+        });
 
         btnHapusDataKebutuhan.setText("Hapus");
+        btnHapusDataKebutuhan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHapusDataKebutuhanActionPerformed(evt);
+            }
+        });
+
+        labelKebutuhanId.setText("id_kebutuhan");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -254,12 +275,15 @@ public class ViewDashboard extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(82, 82, 82)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblKeluarga)
-                    .addComponent(lblNamaBarang))
-                .addGap(35, 35, 35)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(inputNamaBarang, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
-                    .addComponent(inputKeluarga))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblKeluarga)
+                            .addComponent(lblNamaBarang))
+                        .addGap(35, 35, 35)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(inputNamaBarang, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                            .addComponent(inputKeluarga)))
+                    .addComponent(labelKebutuhanId))
                 .addGap(40, 40, 40)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -302,7 +326,9 @@ public class ViewDashboard extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnHapusDataKebutuhan)
                     .addComponent(checkKebutuhanPokok)
-                    .addComponent(lblKebutuhanPokok))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblKebutuhanPokok)
+                        .addComponent(labelKebutuhanId)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43))
@@ -577,6 +603,21 @@ public class ViewDashboard extends javax.swing.JFrame {
         ck.isiTextField(tableDaftarKebutuhan.getSelectedRow());
     }//GEN-LAST:event_tableDaftarKebutuhanMouseClicked
 
+    private void btnTambahDataKebutuhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahDataKebutuhanActionPerformed
+        // TODO add your handling code here:
+        ck.insertKebutuhan();
+    }//GEN-LAST:event_btnTambahDataKebutuhanActionPerformed
+
+    private void btnHapusDataKebutuhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusDataKebutuhanActionPerformed
+        // TODO add your handling code here:
+        ck.deleteKebutuhan();
+    }//GEN-LAST:event_btnHapusDataKebutuhanActionPerformed
+
+    private void btnUbahDataKebutuhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUbahDataKebutuhanActionPerformed
+        // TODO add your handling code here:
+        ck.updateKebutuhan();
+    }//GEN-LAST:event_btnUbahDataKebutuhanActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -656,6 +697,7 @@ public class ViewDashboard extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane_DataPengungsian;
+    private javax.swing.JLabel labelKebutuhanId;
     private javax.swing.JLabel lblAlamat;
     private javax.swing.JLabel lblIdObat;
     private javax.swing.JLabel lblIdPenyakit;
@@ -756,5 +798,9 @@ public class ViewDashboard extends javax.swing.JFrame {
     
     public void setTableKebutuhan(JTable tableDaftarKebutuhan) {
         this.tableDaftarKebutuhan = tableDaftarKebutuhan;
+    }
+    
+    public JLabel getLabelKebutuhanId() {
+        return labelKebutuhanId;
     }
 }

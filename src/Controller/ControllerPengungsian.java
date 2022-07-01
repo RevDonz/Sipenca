@@ -29,19 +29,21 @@ public class ControllerPengungsian {
     public void isiTabel() {
         arrPengungsian = pd.getAllPengungsian();
         DefaultTableModel model = (DefaultTableModel) frame.getTablePengungsian().getModel();
-        Object rowData[] = new Object[4];
+        Object rowData[] = new Object[5];
         for(int i = 0; i < arrPengungsian.size(); i++) {
             rowData[0] = arrPengungsian.get(i).getId_pengungsian();
             rowData[1] = arrPengungsian.get(i).getNama_tempat();
             rowData[2] = arrPengungsian.get(i).getAlamat();
             rowData[3] = arrPengungsian.get(i).getKapasitas_tempat();
+            rowData[4] = arrPengungsian.get(i).getKapasitas_tersisa();
             model.addRow(rowData);
         }
     }
     
     public void isiTextField(int row) {
         frame.getInputNamaTempat().setText(arrPengungsian.get(row).getNama_tempat());
-        frame.getInputAlamat().setText(String.valueOf(arrPengungsian.get(row).getAlamat()));
+        frame.getInputAlamat().setText(arrPengungsian.get(row).getAlamat());
         frame.getInputKapasitas().setText(String.valueOf(arrPengungsian.get(row).getKapasitas_tempat()));
+        frame.getInputTersisa().setText(String.valueOf(arrPengungsian.get(row).getKapasitas_tersisa()));
     }
 }

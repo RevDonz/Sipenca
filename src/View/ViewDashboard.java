@@ -6,6 +6,7 @@
 package View;
 
 import Controller.ControllerKebutuhan;
+import Controller.ControllerKeluarga;
 import Controller.ControllerPengungsian;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
@@ -34,8 +35,9 @@ public class ViewDashboard extends javax.swing.JFrame {
         cp.isiTabel();
         ck.isiTabel();
         labelKebutuhanId.setVisible(false);
+        jTabbedPane_DataPengungsian.remove(jPanel3);
+        jTabbedPane_DataPengungsian.remove(jPanel5);
         if (id != 1) {
-//            jTabbedPane_DataPengungsian.remove(jPanel3);
             lblAlamat.setVisible(false);
             lblNamaTempat.setVisible(false);
             lblKapasitas.setVisible(false);
@@ -201,7 +203,7 @@ public class ViewDashboard extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnTambahDataPengungsian, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnUbahDataPengungsian, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnHapusDataPengungsian, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnHapusDataPengungsian, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
